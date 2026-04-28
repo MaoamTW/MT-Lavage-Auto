@@ -6,195 +6,103 @@
   <title>MT Lavage Auto</title>
 
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0d1b2a, #1b263b);
-      color: #333;
-    }
+    body {margin:0;font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#0d1b2a,#1b263b);}
+    header{text-align:center;color:white;padding:30px 20px}
+    .logo img{width:300px}
 
-    header {
-      padding: 30px 20px 10px;
-      text-align: center;
-      color: white;
-    }
+    .hero{text-align:center;color:white;padding:40px}
 
-    .logo {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 10px;
-    }
+    .cta{display:inline-block;padding:12px 20px;background:white;color:#0d1b2a;border-radius:25px;margin:5px;text-decoration:none;font-weight:bold}
 
-    .logo img {
-      width: 500px;
-      height: auto;
-    }
+    .section{background:#f5f7fa;padding:50px 20px;border-radius:30px 30px 0 0}
 
-    header h1 {
-      margin: 10px 0 0;
-      font-size: 28px;
-    }
+    .cards{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
 
-    .hero {
-      padding: 50px 20px;
-      text-align: center;
-      color: white;
-    }
+    .card{background:white;padding:20px;border-radius:20px;width:250px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,0.15);transition:0.3s}
+    .card:hover{transform:translateY(-8px)}
 
-    .cta {
-      display: inline-block;
-      padding: 14px 24px;
-      background: white;
-      color: #0d1b2a;
-      text-decoration: none;
-      border-radius: 30px;
-      margin: 8px;
-      font-weight: bold;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
+    .highlight{background:linear-gradient(135deg,#ffd60a,#ffb703);border:2px solid red}
 
-    .cta:hover {
-      transform: scale(1.05);
-      background: #e0e1dd;
-    }
+    .price{font-size:22px;font-weight:bold}
 
-    .section {
-      background: #f5f7fa;
-      padding: 50px 20px;
-      border-radius: 30px 30px 0 0;
-      margin-top: 20px;
-    }
+    .old-price{text-decoration:line-through;font-size:14px}
 
-    .cards {
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-      gap: 25px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
+    .btn{margin-top:10px;display:inline-block;background:#0d1b2a;color:white;padding:10px 15px;border-radius:20px;text-decoration:none;font-size:14px}
 
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 20px;
-      width: 260px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      text-align: center;
-      position: relative;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+    .payment{text-align:center;margin-top:40px}
 
-    .card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-    }
-
-    .price {
-      font-size: 24px;
-      font-weight: bold;
-      margin: 15px 0;
-    }
-
-    .highlight {
-      order: 2;
-      background: linear-gradient(135deg, #ffd60a, #ffb703);
-      transform: scale(1.08);
-      border: 2px solid #e63946;
-    }
-
-    .cards .card:nth-child(1) { order: 1; }
-    .cards .card:nth-child(3) { order: 3; }
-
-    .badge {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      background: #e63946;
-      color: white;
-      padding: 8px 12px;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .old-price {
-      text-decoration: line-through;
-      font-size: 14px;
-      color: #555;
-    }
-
-    .best {
-      margin-top: 10px;
-      font-size: 14px;
-      font-weight: bold;
-      color: #e63946;
-    }
-
-    .payment {
-      text-align: center;
-      margin-top: 50px;
-      font-size: 18px;
-    }
-
-    footer {
-      background: #0d1b2a;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
+    footer{text-align:center;color:white;padding:20px}
   </style>
 </head>
 <body>
 
 <header>
   <div class="logo">
-    <img src="https://i.imgur.com/as7vpRg.png" alt="Logo MT Lavage Auto">
+    <img src="https://i.imgur.com/as7vpRg.png">
   </div>
   <h1>Service professionnel directement chez vous</h1>
 </header>
 
 <section class="hero">
   <h2>Un résultat impeccable sans bouger de chez vous</h2>
-  <p>Je me déplace pour redonner à votre véhicule son éclat d'origine.</p>
   <a class="cta" href="tel:+330778043568">📞 Appeler</a>
   <a class="cta" href="mailto:votremail@gmail.com">✉️ Email</a>
 </section>
 
 <section class="section">
-  <h2 style="text-align:center;">Mes prestations</h2>
+  <h2 style="text-align:center">Mes prestations</h2>
 
   <div class="cards">
+
     <div class="card">
       <h3>Intérieur</h3>
       <p>Nettoyage complet</p>
       <div class="price">35€</div>
-    </div>
-
-    <div class="card highlight">
-      <div class="badge">-10€</div>
-      <h3>Complet</h3>
-      <p>Intérieur + extérieur</p>
-      <div class="old-price">75€</div>
-      <div class="price">65€</div>
-      <div class="best">⭐ Offre la plus choisie</div>
+      <a href="#" class="btn" onclick="book('Intérieur'); return false;">Prendre RDV</a>
     </div>
 
     <div class="card">
       <h3>Extérieur</h3>
       <p>Lavage extérieur</p>
       <div class="price">40€</div>
+      <a href="#" class="btn" onclick="book('Extérieur'); return false;">Prendre RDV</a>
     </div>
+
+    <div class="card highlight">
+      <h3>Complet</h3>
+      <p>Intérieur + extérieur</p>
+      <div class="old-price">75€</div>
+      <div class="price">65€</div>
+      <a href="#" class="btn" onclick="book('Complet'); return false;">Prendre RDV</a>
+    </div>
+
   </div>
 
   <div class="payment">
-    <p><strong>Paiement sur place :</strong> 💵 Espèces ou 💳 Carte bancaire</p>
+    <p><strong>Paiement sur place :</strong> 💵 Espèces ou 💳 Carte</p>
   </div>
 </section>
 
 <footer>
   <p>© 2026 MT Lavage Auto</p>
 </footer>
+
+<script>
+function book(service){
+  let date = prompt("Quand souhaitez-vous le RDV ? (ex: 12 juillet 14h)");
+  if(!date) return;
+
+  let choice = confirm("OK pour SMS ? (Annuler = Email)");
+
+  let message = `Bonjour, je souhaite prendre RDV pour le pack ${service} le ${date}.`;
+
+  if(choice){
+    window.location.href = `sms:+330778043568?body=${encodeURIComponent(message)}`;
+  } else {
+    window.location.href = `mailto:votremail@gmail.com?subject=RDV Lavage&body=${encodeURIComponent(message)}`;
+  }
+}
+</script>
 
 </body>
 </html>
