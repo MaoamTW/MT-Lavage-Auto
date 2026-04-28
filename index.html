@@ -1,91 +1,199 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MT Lavage Auto</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MT Lavage Auto</title>
 
-  <style>
-    body{margin:0;font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#0d1b2a,#1b263b);} 
-    header{text-align:center;color:white;padding:30px 20px}
-    .logo img{width:220px}
-    .hero{text-align:center;color:white;padding:30px}
-    .cta{display:inline-block;padding:12px 20px;background:white;color:#0d1b2a;border-radius:25px;margin:5px;text-decoration:none;font-weight:bold}
+<style>
+body{margin:0;font-family:'Segoe UI',sans-serif;background:#f5f7fa}
 
-    .info{color:white;text-align:center;margin-top:-10px}
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#0d1b2a,#1b263b);
+  color:white;
+  text-align:center;
+  padding:70px 20px;
+}
+.hero h1{
+  font-size:34px;
+  margin:10px 0;
+  font-weight:700;
+  position:relative;
+  display:inline-block;
+}
+.hero h1::after{
+  content:"";
+  display:block;
+  height:3px;
+  width:80%;
+  background:#3b82f6;
+  margin:10px auto 0;
+  border-radius:3px;
+}
 
-    .section{background:#f5f7fa;padding:50px 20px;border-radius:30px 30px 0 0}
-    .cards{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+.hero p{opacity:0.85;font-size:18px}
+.hero .buttons{margin-top:25px}
+.hero .btn{
+  background:white;
+  color:#0d1b2a;
+  padding:12px 22px;
+  border-radius:30px;
+  margin:8px;
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+  border:none;
+}
 
-    .card{background:white;padding:20px;border-radius:20px;width:260px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,0.15);transition:0.3s;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer}
-    .card:hover{transform:translateY(-8px) scale(1.02)}
-    .card.active{transform:scale(1.05);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+.section{padding:60px 20px;text-align:center}
+.section h2{margin-bottom:40px;font-size:28px}
 
-    .highlight{background:linear-gradient(135deg,#ffd60a,#ffb703);border:2px solid red}
+.cards{display:flex;gap:25px;justify-content:center;flex-wrap:wrap}
 
-    .price{font-size:24px;font-weight:bold;margin:10px 0}
-    .old-price{text-decoration:line-through;font-size:14px}
+.card{
+  background:#f9fafc;
+  padding:30px 20px;
+  border-radius:20px;
+  width:270px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  transition:0.3s;
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.card:hover{transform:translateY(-8px)}
+.card.active{transform:scale(1.05)}
 
-    .badge{color:#e63946;font-weight:bold;font-size:13px;margin-bottom:5px}
+.card h3{margin-bottom:5px}
+.card p{color:#6b7280;font-size:14px}
 
-    .btn-main{display:block;margin:15px auto 5px;background:#e63946;color:white;padding:12px;border-radius:25px;border:none;font-weight:bold;width:80%;cursor:pointer}
-    .btn-main:hover{transform:scale(1.05);background:#d62839}
+.price{font-size:34px;font-weight:700;margin:15px 0}
+.old{font-size:14px;text-decoration:line-through;color:#9ca3af}
 
-    .btn-secondary{display:block;margin:5px auto 0;font-size:12px;background:none;border:none;text-decoration:underline;cursor:pointer}
+.btn-main{
+  display:block;
+  padding:14px;
+  border-radius:30px;
+  color:white;
+  text-decoration:none;
+  margin-top:auto;
+  margin-bottom:10px;
+  font-weight:600;
+  font-size:15px;
+  border:none;
+  transition:0.25s;
+}
+.btn-main:hover{
+  transform:scale(1.07);
+  filter:brightness(1.1);
+}
 
-    .details-box{margin-top:10px;font-size:13px;text-align:left;max-height:0;overflow:hidden;opacity:0;transition:all 0.4s ease}
-    .card.active .details-box{max-height:200px;opacity:1}
+.red{background:#e63946}
+.blue{background:#2563eb}
+.orange{background:#f97316}
 
-    .benefits{text-align:center;margin-top:30px;font-size:16px}
+.btn-details{
+  margin-top:10px;
+  background:none;
+  border:none;
+  color:#3b82f6;
+  cursor:pointer;
+  font-size:13px;
+}
 
-    .payment{text-align:center;margin-top:40px}
-    footer{text-align:center;color:white;padding:20px}
+.highlight{
+  background:#fff7ed;
+  border:2px solid #f97316;
+  position:relative;
+}
+.badge{
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#f97316;
+  color:white;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:600;
+}
 
-    /* MODAL */
-    .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center}
-    .modal-content{background:white;padding:25px;border-radius:15px;width:300px;text-align:center}
-    .modal input, .modal select{width:90%;padding:10px;margin:10px 0}
-    .modal button{margin:5px;padding:10px;border:none;border-radius:20px;cursor:pointer}
-    .sms{background:#25D366;color:white}
-    .mail{background:#0d1b2a;color:white}
-  </style>
+.details-box{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:0.4s;
+  font-size:13px;
+  text-align:left;
+  margin-top:15px;
+}
+.card.active .details-box{
+  max-height:200px;
+  opacity:1;
+}
+
+.benefits{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  margin-top:50px;
+  flex-wrap:wrap;
+}
+.benefit{
+  background:white;
+  padding:18px;
+  border-radius:15px;
+  width:220px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.06);
+  font-size:14px;
+}
+
+/* MODAL */
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center}
+.modal-content{background:white;padding:25px;border-radius:15px;width:300px;text-align:center}
+.modal input, .modal select{width:90%;padding:10px;margin:10px 0}
+.modal button{margin:5px;padding:10px;border:none;border-radius:20px;cursor:pointer}
+.sms{background:#25D366;color:white}
+.mail{background:#0d1b2a;color:white}
+
+</style>
 </head>
 <body>
 
-<header>
-  <div class="logo">
-    <img src="https://i.imgur.com/as7vpRg.png">
-  </div>
+<div class="hero">
   <h1>Service professionnel directement chez vous</h1>
-</header>
+  <p>Votre voiture comme neuve, sans bouger de chez vous</p>
+  <p>📍 Intervention Lunéville et alentours</p>
 
-<section class="hero">
-  <h2>Votre voiture comme neuve, sans bouger de chez vous</h2>
-  <div class="info">📍 Intervention Lunéville et alentours</div>
-  <a class="cta" href="tel:+330778043568">📞 Appeler</a>
-  <a class="cta" href="mailto:votremail@gmail.com">✉️ Email</a>
-</section>
+  <div class="buttons">
+    <a href="tel:+330778043568" class="btn">📞 Appeler</a>
+    <a href="mailto:votremail@gmail.com" class="btn">✉️ Email</a>
+  </div>
+</div>
 
-<section class="section">
-  <h2 style="text-align:center">Mes prestations</h2>
+<div class="section">
+  <h2>Mes prestations</h2>
 
   <div class="cards">
 
     <div class="card" onclick="toggleDetails(this,'interieur')">
       <h3>Intérieur</h3>
       <p>Lavage intérieur</p>
-      <div class="price">35€</div>
-      <button class="btn-main" onclick="event.stopPropagation(); openBooking('Intérieur')">Prendre RDV</button>
-      <button class="btn-secondary" onclick="event.stopPropagation(); toggleDetails(this.closest('.card'),'interieur')">Voir détails</button>
+      <div class="price" style="color:#e63946">35€</div>
+      <button class="btn-main red" onclick="event.stopPropagation(); openBooking('Intérieur')">📆 Prendre RDV</button>
+      <button class="btn-details" onclick="event.stopPropagation(); toggleDetails(this.closest('.card'),'interieur')"><strong>ⓘ Voir détails ></strong></button>
       <div class="details-box"></div>
     </div>
 
     <div class="card" onclick="toggleDetails(this,'exterieur')">
       <h3>Extérieur</h3>
       <p>Lavage extérieur</p>
-      <div class="price">40€</div>
-      <button class="btn-main" onclick="event.stopPropagation(); openBooking('Extérieur')">Prendre RDV</button>
-      <button class="btn-secondary" onclick="event.stopPropagation(); toggleDetails(this.closest('.card'),'exterieur')">Voir détails</button>
+      <div class="price" style="color:#2563eb">40€</div>
+      <button class="btn-main blue" onclick="event.stopPropagation(); openBooking('Extérieur')">📆 Prendre RDV</button>
+      <button class="btn-details" onclick="event.stopPropagation(); toggleDetails(this.closest('.card'),'exterieur')"><strong>ⓘ Voir détails ></strong></button>
       <div class="details-box"></div>
     </div>
 
@@ -93,29 +201,21 @@
       <div class="badge">🔥 Le plus choisi • Économisez 10€</div>
       <h3>Complet</h3>
       <p>Intérieur + extérieur</p>
-      <div class="old-price">75€</div>
-      <div class="price">65€</div>
-      <button class="btn-main" onclick="event.stopPropagation(); openBooking('Complet')">Prendre RDV</button>
-      <button class="btn-secondary" onclick="event.stopPropagation(); toggleDetails(this.closest('.card'),'complet')">Voir détails</button>
+      <div class="old">75€</div>
+      <div class="price" style="color:#f97316">65€</div>
+      <button class="btn-main orange" onclick="event.stopPropagation(); openBooking('Complet')">📆 Prendre RDV</button>
+      <button class="btn-details" onclick="event.stopPropagation(); toggleDetails(this.closest('.card'),'complet')"><strong>ⓘ Voir détails ></strong></button>
       <div class="details-box"></div>
     </div>
 
   </div>
 
   <div class="benefits">
-    ✔️ Déplacement à domicile<br>
-    ✔️ Matériel professionnel<br>
-    ✔️ Réponse rapide
+    <div class="benefit">✔️ Déplacement à domicile</div>
+    <div class="benefit">✔️ Matériel professionnel</div>
+    <div class="benefit">✔️ Réponse rapide</div>
   </div>
-
-  <div class="payment">
-    <p><strong>Paiement sur place :</strong> 💵 Espèces ou 💳 Carte</p>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 MT Lavage Auto</p>
-</footer>
+</div>
 
 <!-- MODAL -->
 <div class="modal" id="modal">
@@ -136,12 +236,9 @@ let currentService = '';
 
 function openBooking(service){
   currentService = service;
-
-  // Empêcher les dates passées
   const today = new Date().toISOString().split('T')[0];
   document.getElementById('date').min = today;
 
-  // Horaires selon service
   const timeSelect = document.getElementById('time');
   timeSelect.innerHTML = '';
 
@@ -187,6 +284,15 @@ function sendBooking(type){
 function toggleDetails(card,type){
   card.classList.toggle('active');
   const box = card.querySelector('.details-box');
+  const btn = card.querySelector('.btn-details');
+
+  // toggle texte bouton
+  if(card.classList.contains('active')){
+    btn.style.display = 'none';
+  } else {
+    btn.style.display = 'block';
+  }
+
   if(box.innerHTML!=='') return;
 
   if(type==='interieur') box.innerHTML='- Aspiration complète<br>- Plastiques<br>- Vitres<br>- Dépoussiérage';
