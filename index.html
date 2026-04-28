@@ -183,7 +183,7 @@ body{margin:0;font-family:'Segoe UI',sans-serif;background:#f5f7fa}
       <h3>Intérieur</h3>
       <p>Lavage intérieur</p>
       <div class="price" style="color:#e63946">35€</div>
-      <button class="btn-main red" onclick="event.stopPropagation(); openBooking('Intérieur')">📆 Prendre RDV</button>
+      <button class="btn-main red" onclick="event.stopPropagation(); openBooking('Intérieur')"><img src="https://i.imgur.com/CaOo0Al.png" alt="Calendrier rouge" style="height: 30px; vertical-align: middle; margin-right: 8px;">Prendre RDV</button>
       <button class="btn-details" onclick="event.stopPropagation(); toggleDetails(this.closest('.card'),'interieur')"><strong>ⓘ Voir détails ></strong></button>
       <div class="details-box"></div>
     </div>
@@ -192,7 +192,7 @@ body{margin:0;font-family:'Segoe UI',sans-serif;background:#f5f7fa}
       <h3>Extérieur</h3>
       <p>Lavage extérieur</p>
       <div class="price" style="color:#2563eb">40€</div>
-      <button class="btn-main blue" onclick="event.stopPropagation(); openBooking('Extérieur')">📆 Prendre RDV</button>
+      <button class="btn-main blue" onclick="event.stopPropagation(); openBooking('Extérieur')"><img src="https://i.imgur.com/RtQLKyp.png" alt="Calendrier bleu" style="height: 30px; vertical-align: middle; margin-right: 8px;">Prendre RDV</button>
       <button class="btn-details" onclick="event.stopPropagation(); toggleDetails(this.closest('.card'),'exterieur')"><strong>ⓘ Voir détails ></strong></button>
       <div class="details-box"></div>
     </div>
@@ -203,7 +203,7 @@ body{margin:0;font-family:'Segoe UI',sans-serif;background:#f5f7fa}
       <p>Intérieur + extérieur</p>
       <div class="old">75€</div>
       <div class="price" style="color:#f97316">65€</div>
-      <button class="btn-main orange" onclick="event.stopPropagation(); openBooking('Complet')">📆 Prendre RDV</button>
+      <button class="btn-main orange" onclick="event.stopPropagation(); openBooking('Complet')"><img src="https://i.imgur.com/bDjmXji.png" alt="Calendrier orange" style="height: 30px; vertical-align: middle; margin-right: 8px;">Prendre RDV</button>
       <button class="btn-details" onclick="event.stopPropagation(); toggleDetails(this.closest('.card'),'complet')"><strong>ⓘ Voir détails ></strong></button>
       <div class="details-box"></div>
     </div>
@@ -211,9 +211,9 @@ body{margin:0;font-family:'Segoe UI',sans-serif;background:#f5f7fa}
   </div>
 
   <div class="benefits">
-    <div class="benefit">✔️ Déplacement à domicile</div>
-    <div class="benefit">✔️ Matériel professionnel</div>
-    <div class="benefit">✔️ Réponse rapide</div>
+    <div class="benefit"><img src="https://i.imgur.com/IgJdvn2.png" alt="TripAdvisor" style="height: 20px; vertical-align: middle; margin-right: 8px;">✔️ Déplacement à domicile</div>
+    <div class="benefit"><img src="https://i.imgur.com/IgJdvn2.png" alt="TripAdvisor" style="height: 20px; vertical-align: middle; margin-right: 8px;">✔️ Matériel professionnel</div>
+    <div class="benefit"><img src="https://i.imgur.com/IgJdvn2.png" alt="TripAdvisor" style="height: 20px; vertical-align: middle; margin-right: 8px;">✔️ Réponse rapide</div>
   </div>
 </div>
 
@@ -277,7 +277,7 @@ function sendBooking(type){
   if(type==='sms'){
     window.location.href = `sms:+330778043568?body=${encodeURIComponent(msg)}`;
   }else{
-    window.location.href = `mailto:votremail@gmail.com?subject=RDV Lavage&body=${encodeURIComponent(msg)}`;
+    window.location.href = `mailto:mt.lavage.auto.54@gmail.com?subject=RDV Lavage&body=${encodeURIComponent(msg)}`;
   }
 }
 
@@ -295,10 +295,11 @@ function toggleDetails(card,type){
 
   if(box.innerHTML!=='') return;
 
-  if(type==='interieur') box.innerHTML='- Aspiration complète<br>- Plastiques<br>- Vitres<br>- Dépoussiérage';
-  if(type==='exterieur') box.innerHTML='- Carrosserie<br>- Jantes<br>- Séchage<br>- Brillance';
-  if(type==='complet') box.innerHTML='- Intérieur + extérieur<br>- Nettoyage complet<br>- Finition';
+  if(type==='interieur') box.innerHTML='<img src="https://i.imgur.com/Z9tNylf.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Aspiration complète (sièges, tapis, coffre)<br><img src="https://i.imgur.com/Z9tNylf.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Nettoyage des plastiques<br><img src="https://i.imgur.com/Z9tNylf.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Nettoyage des vitres<br><img src="https://i.imgur.com/Z9tNylf.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Dépoussiérage complet<br><img src="https://i.imgur.com/Z9tNylf.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Finition propre et soignée<br><br>⏱️ Durée : 1h à 2h selon l’état du véhicule<br>🚗 Intervention à domicile';
+  if(type==='exterieur') box.innerHTML='<img src="https://i.imgur.com/OFMlhpY.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Lavage carrosserie à la main<br><img src="https://i.imgur.com/OFMlhpY.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Nettoyage des jantes<br><img src="https://i.imgur.com/OFMlhpY.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Rinçage + séchage microfibre<br><img src="https://i.imgur.com/OFMlhpY.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Brillance carrosserie<br><img src="https://i.imgur.com/OFMlhpY.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Vitres extérieures<br><br>⏱️ Durée : 1h à 2h selon l’état du véhicule<br>🚗 Intervention à domicile';
+  if(type==='complet') box.innerHTML='<img src="https://i.imgur.com/y4mXqrE.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Tout l’intérieur + extérieur<br><img src="https://i.imgur.com/y4mXqrE.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Nettoyage en profondeur<br><img src="https://i.imgur.com/y4mXqrE.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Finition détaillée<br><br>⏱️ Durée : 1h à 2h selon l’état du véhicule<br>🚗 Intervention à domicile';
 }
+
 </script>
 
 </body>
