@@ -6,101 +6,48 @@
   <title>MT Lavage Auto</title>
 
   <style>
-    body {margin:0;font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#0d1b2a,#1b263b);}
+    body{margin:0;font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#0d1b2a,#1b263b);} 
     header{text-align:center;color:white;padding:30px 20px}
-    .logo img{width:300px}
-
-    .hero{text-align:center;color:white;padding:40px}
-
+    .logo img{width:220px}
+    .hero{text-align:center;color:white;padding:30px}
     .cta{display:inline-block;padding:12px 20px;background:white;color:#0d1b2a;border-radius:25px;margin:5px;text-decoration:none;font-weight:bold}
 
-    .section{background:#f5f7fa;padding:50px 20px;border-radius:30px 30px 0 0}
+    .info{color:white;text-align:center;margin-top:-10px}
 
+    .section{background:#f5f7fa;padding:50px 20px;border-radius:30px 30px 0 0}
     .cards{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
 
-    .card{
-      background:white;
-      padding:20px;
-      border-radius:20px;
-      width:260px;
-      text-align:center;
-      box-shadow:0 8px 20px rgba(0,0,0,0.15);
-      transition:0.3s;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      min-height:260px;
-      cursor:pointer;
-    }
-
-    .card.active{
-      transform:scale(1.05);
-      box-shadow:0 20px 40px rgba(0,0,0,0.3);
-    }
-
-    .details-box{
-      margin-top:10px;
-      font-size:13px;
-      text-align:left;
-      max-height:0;
-      overflow:hidden;
-      opacity:0;
-      transition: all 0.4s ease;
-    }
-
-    .card.active .details-box{
-      max-height:200px;
-      opacity:1;
-    }
-
-    .card.active .details-box{
-      display:block;
-    }
-    .card:hover{
-      transform:translateY(-8px) scale(1.02);
-    }
+    .card{background:white;padding:20px;border-radius:20px;width:260px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,0.15);transition:0.3s;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer}
+    .card:hover{transform:translateY(-8px) scale(1.02)}
+    .card.active{transform:scale(1.05);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
 
     .highlight{background:linear-gradient(135deg,#ffd60a,#ffb703);border:2px solid red}
 
     .price{font-size:24px;font-weight:bold;margin:10px 0}
-
     .old-price{text-decoration:line-through;font-size:14px}
 
-    /* Bouton principal (RDV) */
-    .btn-main{
-      display:block;
-      margin:15px auto 5px auto;
-      background:#e63946;
-      color:white;
-      padding:12px;
-      border-radius:25px;
-      text-decoration:none;
-      font-weight:bold;
-      font-size:15px;
-      transition:0.2s;
-      width:80%;
-    }
+    .badge{color:#e63946;font-weight:bold;font-size:13px;margin-bottom:5px}
 
-    .btn-main:hover{
-      transform:scale(1.05);
-      background:#d62839;
-    }
+    .btn-main{display:block;margin:15px auto 5px;background:#e63946;color:white;padding:12px;border-radius:25px;border:none;font-weight:bold;width:80%;cursor:pointer}
+    .btn-main:hover{transform:scale(1.05);background:#d62839}
 
-    /* Bouton secondaire (détails) */
-    .btn-secondary{
-      display:block;
-      margin:5px auto 0 auto;
-      font-size:12px;
-      color:#0d1b2a;
-      background:none;
-      border:none;
-      text-decoration:underline;
-      cursor:pointer;
-    }
+    .btn-secondary{display:block;margin:5px auto 0;font-size:12px;background:none;border:none;text-decoration:underline;cursor:pointer}
+
+    .details-box{margin-top:10px;font-size:13px;text-align:left;max-height:0;overflow:hidden;opacity:0;transition:all 0.4s ease}
+    .card.active .details-box{max-height:200px;opacity:1}
+
+    .benefits{text-align:center;margin-top:30px;font-size:16px}
 
     .payment{text-align:center;margin-top:40px}
-
     footer{text-align:center;color:white;padding:20px}
+
+    /* MODAL */
+    .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center}
+    .modal-content{background:white;padding:25px;border-radius:15px;width:300px;text-align:center}
+    .modal input, .modal select{width:90%;padding:10px;margin:10px 0}
+    .modal button{margin:5px;padding:10px;border:none;border-radius:20px;cursor:pointer}
+    .sms{background:#25D366;color:white}
+    .mail{background:#0d1b2a;color:white}
   </style>
 </head>
 <body>
@@ -113,7 +60,8 @@
 </header>
 
 <section class="hero">
-  <h2>Un résultat impeccable sans bouger de chez vous</h2>
+  <h2>Votre voiture comme neuve, sans bouger de chez vous</h2>
+  <div class="info">📍 Intervention Lunéville et alentours</div>
   <a class="cta" href="tel:+330778043568">📞 Appeler</a>
   <a class="cta" href="mailto:votremail@gmail.com">✉️ Email</a>
 </section>
@@ -127,30 +75,37 @@
       <h3>Intérieur</h3>
       <p>Lavage intérieur</p>
       <div class="price">35€</div>
-      <button type="button" class="btn-main" onclick="event.stopPropagation(); book('Intérieur')">Prendre RDV</button>
-      <button type="button" class="btn-secondary" onclick="event.stopPropagation(); toggleDetails(this.closest('.card'),'interieur')">Voir détails</button>
-      <div class="details-box" id="interieur-details"></div>
+      <button class="btn-main" onclick="event.stopPropagation(); openBooking('Intérieur')">Prendre RDV</button>
+      <button class="btn-secondary" onclick="event.stopPropagation(); toggleDetails(this.closest('.card'),'interieur')">Voir détails</button>
+      <div class="details-box"></div>
     </div>
 
     <div class="card" onclick="toggleDetails(this,'exterieur')">
       <h3>Extérieur</h3>
       <p>Lavage extérieur</p>
       <div class="price">40€</div>
-      <button type="button" class="btn-main" onclick="event.stopPropagation(); book('Extérieur')">Prendre RDV</button>
-      <button type="button" class="btn-secondary" onclick="event.stopPropagation(); toggleDetails(this.closest('.card'),'exterieur')">Voir détails</button>
-      <div class="details-box" id="exterieur-details"></div>
+      <button class="btn-main" onclick="event.stopPropagation(); openBooking('Extérieur')">Prendre RDV</button>
+      <button class="btn-secondary" onclick="event.stopPropagation(); toggleDetails(this.closest('.card'),'exterieur')">Voir détails</button>
+      <div class="details-box"></div>
     </div>
 
     <div class="card highlight" onclick="toggleDetails(this,'complet')">
+      <div class="badge">🔥 Le plus choisi • Économisez 10€</div>
       <h3>Complet</h3>
       <p>Intérieur + extérieur</p>
       <div class="old-price">75€</div>
       <div class="price">65€</div>
-      <button type="button" class="btn-main" onclick="event.stopPropagation(); book('Complet')">Prendre RDV</button>
-      <button type="button" class="btn-secondary" onclick="event.stopPropagation(); toggleDetails(this.closest('.card'),'complet')">Voir détails</button>
-      <div class="details-box" id="complet-details"></div>
+      <button class="btn-main" onclick="event.stopPropagation(); openBooking('Complet')">Prendre RDV</button>
+      <button class="btn-secondary" onclick="event.stopPropagation(); toggleDetails(this.closest('.card'),'complet')">Voir détails</button>
+      <div class="details-box"></div>
     </div>
 
+  </div>
+
+  <div class="benefits">
+    ✔️ Déplacement à domicile<br>
+    ✔️ Matériel professionnel<br>
+    ✔️ Réponse rapide
   </div>
 
   <div class="payment">
@@ -162,47 +117,81 @@
   <p>© 2026 MT Lavage Auto</p>
 </footer>
 
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h3>Choisir votre RDV</h3>
+    <input type="date" id="date">
+    <select id="time"></select>
+    <br>
+    <button class="sms" onclick="sendBooking('sms')">SMS</button>
+    <button class="mail" onclick="sendBooking('mail')">Email</button>
+    <br><br>
+    <button onclick="closeModal()">Fermer</button>
+  </div>
+</div>
+
 <script>
-function book(service){
-  let date = prompt("Quand souhaitez-vous le RDV ? (ex: 12 juillet 14h)");
-  if(!date) return;
+let currentService = '';
 
-  let choice = confirm("OK pour SMS ? (Annuler = Email)");
+function openBooking(service){
+  currentService = service;
 
-  let message = `Bonjour, je souhaite prendre RDV pour le pack ${service} le ${date}.`;
+  // Empêcher les dates passées
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('date').min = today;
 
-  if(choice){
-    window.location.href = `sms:+330778043568?body=${encodeURIComponent(message)}`;
-  } else {
-    window.location.href = `mailto:votremail@gmail.com?subject=RDV Lavage&body=${encodeURIComponent(message)}`;
+  // Horaires selon service
+  const timeSelect = document.getElementById('time');
+  timeSelect.innerHTML = '';
+
+  let slots = [];
+
+  if(service === 'Intérieur' || service === 'Extérieur'){
+    slots = ['09:00 - 11:00','13:00 - 15:00','17:00 - 19:00'];
+  }
+
+  if(service === 'Complet'){
+    slots = ['09:00 - 12:00','13:00 - 16:00'];
+  }
+
+  slots.forEach(s => {
+    let option = document.createElement('option');
+    option.value = s;
+    option.textContent = s;
+    timeSelect.appendChild(option);
+  });
+
+  document.getElementById('modal').style.display='flex';
+}
+
+function closeModal(){
+  document.getElementById('modal').style.display='none';
+}
+
+function sendBooking(type){
+  const date = document.getElementById('date').value;
+  const time = document.getElementById('time').value;
+
+  if(!date || !time){alert('Choisis date et heure');return;}
+
+  const msg = `Bonjour, je souhaite un RDV pour ${currentService} le ${date} (${time}).`;
+
+  if(type==='sms'){
+    window.location.href = `sms:+330778043568?body=${encodeURIComponent(msg)}`;
+  }else{
+    window.location.href = `mailto:votremail@gmail.com?subject=RDV Lavage&body=${encodeURIComponent(msg)}`;
   }
 }
-</script>
 
-
-<script>
-function toggleDetails(card, type){
+function toggleDetails(card,type){
   card.classList.toggle('active');
+  const box = card.querySelector('.details-box');
+  if(box.innerHTML!=='') return;
 
-  var box = card.querySelector('.details-box');
-
-  if(box.innerHTML !== "") return;
-
-  var text = "";
-
-  if(type === 'interieur'){
-    text = "- Aspiration complète<br>- Nettoyage plastiques<br>- Vitres intérieures<br>- Dépoussiérage<br>- Finition propre";
-  }
-
-  if(type === 'exterieur'){
-    text = "- Lavage carrosserie<br>- Nettoyage jantes<br>- Séchage microfibre<br>- Brillance<br>- Vitres extérieures";
-  }
-
-  if(type === 'complet'){
-    text = "- Intérieur + extérieur<br>- Nettoyage complet<br>- Résultat comme neuf<br>- Finition détaillée";
-  }
-
-  box.innerHTML = text;
+  if(type==='interieur') box.innerHTML='- Aspiration complète<br>- Plastiques<br>- Vitres<br>- Dépoussiérage';
+  if(type==='exterieur') box.innerHTML='- Carrosserie<br>- Jantes<br>- Séchage<br>- Brillance';
+  if(type==='complet') box.innerHTML='- Intérieur + extérieur<br>- Nettoyage complet<br>- Finition';
 }
 </script>
 
