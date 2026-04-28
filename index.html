@@ -27,7 +27,6 @@
 
     .old-price{text-decoration:line-through;font-size:14px}
 
-    /* Bouton principal (RDV) */
     .btn-main{
       display:block;
       margin-top:12px;
@@ -46,7 +45,6 @@
       background:#d62839;
     }
 
-    /* Bouton secondaire (détails) */
     .btn-secondary{
       display:inline-block;
       margin-top:8px;
@@ -133,93 +131,21 @@ function book(service){
   } else {
     window.location.href = "mailto:votremail@gmail.com?subject=RDV Lavage&body=" + encodeURIComponent(message);
   }
-} le ${date}.`;
-
-  if(choice){
-    window.location.href = `sms:+330778043568?body=${encodeURIComponent(message)}`;
-  } else {
-    window.location.href = `mailto:votremail@gmail.com?subject=RDV Lavage&body=${encodeURIComponent(message)}`;
-  }
 }
 
 function details(type){
   let text = "";
 
   if(type === 'interieur'){
-    text = "INTERIEUR
-
-• Aspiration complète (sièges, tapis, coffre)
-• Nettoyage des plastiques (tableau de bord, portes...)
-• Nettoyage des vitres intérieures
-• Dépoussiérage complet
-• Finition propre et soignée
-
-Durée : 1h à 2h selon l’état du véhicule
-Intervention à domicile";
+    text = INTERIEUR  • Aspiration complète (sièges, tapis, coffre) • Nettoyage des plastiques • Nettoyage des vitres intérieures • Dépoussiérage complet • Finition propre et soignée  Durée : 1h à 2h Intervention à domicile;
   }
 
-  if(type === 'exterieur'){
-    text = "EXTERIEUR
-
-• Lavage carrosserie à la main
-• Nettoyage des jantes
-• Rinçage + séchage microfibre
-• Brillance carrosserie
-• Vitres extérieures
-
-Durée : 1h à 2h selon l’état du véhicule
-Intervention à domicile";
+  else if(type === 'exterieur'){
+    text = EXTÉRIEUR  • Lavage carrosserie à la main • Nettoyage des jantes • Rinçage + séchage microfibre • Brillance carrosserie • Vitres extérieures  Durée : 1h à 2h Intervention à domicile;
   }
 
-  if(type === 'complet'){
-    text = "COMPLET
-
-• Tout l’intérieur + extérieur
-• Nettoyage en profondeur
-• Résultat comme neuf
-• Finition détaillée
-
-Durée : 2h à 3h selon l’état du véhicule
-Intervention à domicile";
-  }
-
-  alert(text);
-}
-
-  if(type === 'exterieur'){
-    text = `EXTÉRIEUR
-
-• Lavage carrosserie à la main
-• Nettoyage des jantes
-• Rinçage + séchage microfibre
-• Brillance carrosserie
-• Vitres extérieures
-
-⏱️ Durée : 1h à 2h selon l’état du véhicule
-🚗 Intervention à domicile`;
-  }
-
-  if(type === 'complet'){
-    text = `COMPLET
-
-• Tout l’intérieur + extérieur
-• Nettoyage en profondeur
-• Résultat “comme neuf”
-• Finition détaillée
-
-⏱️ Durée : 2h à 3h selon l’état du véhicule
-🚗 Intervention à domicile`;
-  }
-
-  alert(text);
-}
-
-  if(type === 'exterieur'){
-    text = `EXTÉRIEUR\n\n• Lavage carrosserie à la main\n• Nettoyage des jantes\n• Rinçage + séchage microfibre\n• Brillance carrosserie\n• Vitres extérieures\n\nDurée : 1h à 2h\nIntervention à domicile`;
-  }
-
-  if(type === 'complet'){
-    text = `COMPLET\n\n• Intérieur + extérieur\n• Nettoyage en profondeur\n• Résultat comme neuf\n• Finition détaillée\n\nDurée : 2h à 3h\nIntervention à domicile`;
+  else if(type === 'complet'){
+    text = COMPLET  • Intérieur + extérieur • Nettoyage en profondeur • Résultat comme neuf • Finition détaillée  Durée : 2h à 3h Intervention à domicile;
   }
 
   alert(text);
