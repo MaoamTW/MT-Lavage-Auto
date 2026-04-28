@@ -52,6 +52,8 @@
       margin-top:8px;
       font-size:12px;
       color:#0d1b2a;
+      background:none;
+      border:none;
       text-decoration:underline;
       cursor:pointer;
     }
@@ -85,16 +87,16 @@
       <h3>Intérieur</h3>
       <p>Lavage intérieur</p>
       <div class="price">35€</div>
-      <a href="#" class="btn-main" onclick="book('Intérieur'); return false;">Prendre RDV</a>
-      <span class="btn-secondary" onclick="details('interieur')">Voir détails</span>
+      <button class="btn-main" onclick="book('Intérieur')">Prendre RDV</button>
+      <button class="btn-secondary" onclick="details('interieur')">Voir détails</button>
     </div>
 
     <div class="card">
       <h3>Extérieur</h3>
       <p>Lavage extérieur</p>
       <div class="price">40€</div>
-      <a href="#" class="btn-main" onclick="book('Extérieur'); return false;">Prendre RDV</a>
-      <span class="btn-secondary" onclick="details('exterieur')">Voir détails</span>
+      <button class="btn-main" onclick="book('Extérieur')">Prendre RDV</button>
+      <button class="btn-secondary" onclick="details('exterieur')">Voir détails</button>
     </div>
 
     <div class="card highlight">
@@ -102,8 +104,8 @@
       <p>Intérieur + extérieur</p>
       <div class="old-price">75€</div>
       <div class="price">65€</div>
-      <a href="#" class="btn-main" onclick="book('Complet'); return false;">Prendre RDV</a>
-      <span class="btn-secondary" onclick="details('complet')">Voir détails</span>
+      <button class="btn-main" onclick="book('Complet')">Prendre RDV</button>
+      <button class="btn-secondary" onclick="details('complet')">Voir détails</button>
     </div>
 
   </div>
