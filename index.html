@@ -146,6 +146,30 @@ body{margin:0;font-family:'Segoe UI',sans-serif;background:#f5f7fa}
   opacity:1;
 }
 
+.nexblock{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 14px 28px;
+  margin: 20px auto;
+
+  border-radius: 40px;
+  background: rgba(59,130,246,0.08);
+  border: 1px solid rgba(59,130,246,0.2);
+
+  font-size: 15px;
+  font-weight: 500;
+  color: #1e3a8a;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+}
+
 .benefits{
   display:flex;
   justify-content:center;
@@ -153,6 +177,31 @@ body{margin:0;font-family:'Segoe UI',sans-serif;background:#f5f7fa}
   margin-top:50px;
   flex-wrap:wrap;
 }
+
+.benefit-pro {
+  background: #ffffff;
+  padding: 22px 26px;
+  border-radius: 18px;
+
+  /* plus large */
+  width: 280px;
+
+  /* meilleur rendu visuel */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  /* alignement contenu */
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a1a1a;
+
+  /* effet moderne */
+  transition: all 0.25s ease;
+}
+
 .benefit{
   background:white;
   padding:18px;
@@ -261,7 +310,7 @@ body{margin:0;font-family:'Segoe UI',sans-serif;background:#f5f7fa}
   
   <h1>Service professionnel directement chez vous</h1>
   <p>Votre voiture <strong><a class="bleutxt">comme neuve</a></strong>, sans bouger de chez vous</p>   
-  <p><strong>Paiement sur place : </strong><img src="https://i.imgur.com/nquPnCg.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Espèces ou Carte <img src="https://i.imgur.com/IJMvks4.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;"></p>
+  <p><strong>Paiement sur place : </strong><img src="https://i.imgur.com/nquPnCg.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">espèces ou carte <img src="https://i.imgur.com/IJMvks4.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;"></p>
   <p>📍 Intervention Lunéville et alentours</p>
 
   <div class="buttons">
@@ -270,10 +319,20 @@ body{margin:0;font-family:'Segoe UI',sans-serif;background:#f5f7fa}
   </div>
 </div>
 
+
 <div class="section">
 <h2 class="title">Avant / <a class="bleutxt">Après</a></h2> 
 <p>Découvrez la différence, résultat garenti.</p>
+
+
+<div class="nexblock">
+  <img src="https://i.imgur.com/8iXcYIe.png" style="height:30px">
+  Résultat professionnel • Intervention rapide • Satisfaction garantie
 </div>
+
+</div>
+
+
 <div class="before-after">
   <img src="https://i.imgur.com/Yuutfbz.jpeg" class="img-right">
   <img src="https://i.imgur.com/yIppxsQ.jpeg" class="img-left">
@@ -282,9 +341,9 @@ body{margin:0;font-family:'Segoe UI',sans-serif;background:#f5f7fa}
 </div>
 
 <div class="benefits">
-    <div class="benefit"><img src="https://i.imgur.com/D8XBC47.png" alt="TripAdvisor" style="height: 30px; vertical-align: middle; margin-right: 8px;">Déplacement à domicile</div>
-    <div class="benefit"><img src="https://i.imgur.com/8iXcYIe.png" alt="TripAdvisor" style="height: 30px; vertical-align: middle; margin-right: 8px;">Matériel professionnel</div>
-    <div class="benefit"><img src="https://i.imgur.com/K3HUKeC.png" alt="TripAdvisor" style="height: 30px; vertical-align: middle; margin-right: 8px;">Réponse rapide</div>
+    <div class="benefit"><img src="https://i.imgur.com/D8XBC47.png" alt="TripAdvisor" style="height: 30px; vertical-align: middle; margin-right: 8px;">Propeté impecable</div>
+    <div class="benefit"><img src="https://i.imgur.com/8iXcYIe.png" alt="TripAdvisor" style="height: 30px; vertical-align: middle; margin-right: 8px;">Produits professionnels</div>
+    <div class="benefit"><img src="https://i.imgur.com/K3HUKeC.png" alt="TripAdvisor" style="height: 30px; vertical-align: middle; margin-right: 8px;">Résultat immédiat</div>
   </div>
 
 <div class="section">
@@ -470,9 +529,9 @@ function toggleDetails(card,type){
 
   if(box.innerHTML!=='') return;
 
-  if(type==='interieur') box.innerHTML='<img src="https://i.imgur.com/Z9tNylf.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Aspiration complète (sièges, tapis, coffre)<br><img src="https://i.imgur.com/Z9tNylf.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Nettoyage des plastiques<br><img src="https://i.imgur.com/Z9tNylf.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Nettoyage des vitres<br><img src="https://i.imgur.com/Z9tNylf.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Dépoussiérage complet<br><img src="https://i.imgur.com/Z9tNylf.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Finition propre et soignée<br><br>⏱️ Durée : 1h à 2h selon l’état du véhicule<br>🚗 Intervention à domicile<br><br>Paiement sur place : <img src="https://i.imgur.com/nquPnCg.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Espèces ou carte <img src="https://i.imgur.com/IJMvks4.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">';
-  if(type==='exterieur') box.innerHTML='<img src="https://i.imgur.com/OFMlhpY.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Lavage carrosserie à la main<br><img src="https://i.imgur.com/OFMlhpY.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Nettoyage des jantes<br><img src="https://i.imgur.com/OFMlhpY.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Rinçage + séchage microfibre<br><img src="https://i.imgur.com/OFMlhpY.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Brillance carrosserie<br><img src="https://i.imgur.com/OFMlhpY.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Vitres extérieures<br><br>⏱️ Durée : 1h à 2h selon l’état du véhicule<br>🚗 Intervention à domicile<br><br>Paiement sur place : <img src="https://i.imgur.com/nquPnCg.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Espèces ou carte <img src="https://i.imgur.com/IJMvks4.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">';
-  if(type==='complet') box.innerHTML='<img src="https://i.imgur.com/y4mXqrE.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Tout l’intérieur + extérieur<br><img src="https://i.imgur.com/y4mXqrE.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Nettoyage en profondeur<br><img src="https://i.imgur.com/y4mXqrE.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Finition détaillée<br><br>⏱️ Durée : 2h à 3h selon l’état du véhicule<br>🚗 Intervention à domicile<br><br>Paiement sur place : <img src="https://i.imgur.com/nquPnCg.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Espèces ou carte <img src="https://i.imgur.com/IJMvks4.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">';
+  if(type==='interieur') box.innerHTML='<img src="https://i.imgur.com/Z9tNylf.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Aspiration complète (sièges, tapis, coffre)<br><img src="https://i.imgur.com/Z9tNylf.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Nettoyage des plastiques<br><img src="https://i.imgur.com/Z9tNylf.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Nettoyage des vitres<br><img src="https://i.imgur.com/Z9tNylf.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Dépoussiérage complet<br><img src="https://i.imgur.com/Z9tNylf.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Finition propre et soignée<br><br>⏱️ Durée : 1h à 2h selon l’état du véhicule<br>🚗 Intervention à domicile<br><br>Paiement sur place : <img src="https://i.imgur.com/nquPnCg.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">espèces ou carte <img src="https://i.imgur.com/IJMvks4.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">';
+  if(type==='exterieur') box.innerHTML='<img src="https://i.imgur.com/OFMlhpY.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Lavage carrosserie à la main<br><img src="https://i.imgur.com/OFMlhpY.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Nettoyage des jantes<br><img src="https://i.imgur.com/OFMlhpY.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Rinçage + séchage microfibre<br><img src="https://i.imgur.com/OFMlhpY.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Brillance carrosserie<br><img src="https://i.imgur.com/OFMlhpY.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Vitres extérieures<br><br>⏱️ Durée : 1h à 2h selon l’état du véhicule<br>🚗 Intervention à domicile<br><br>Paiement sur place : <img src="https://i.imgur.com/nquPnCg.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">espèces ou carte <img src="https://i.imgur.com/IJMvks4.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">';
+  if(type==='complet') box.innerHTML='<img src="https://i.imgur.com/y4mXqrE.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Tout l’intérieur + extérieur<br><img src="https://i.imgur.com/y4mXqrE.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Nettoyage en profondeur<br><img src="https://i.imgur.com/y4mXqrE.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">Finition détaillée<br><br>⏱️ Durée : 2h à 3h selon l’état du véhicule<br>🚗 Intervention à domicile<br><br>Paiement sur place : <img src="https://i.imgur.com/nquPnCg.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">espèces ou carte <img src="https://i.imgur.com/IJMvks4.png" alt="TripAdvisor" style="height: 15px; vertical-align: middle; margin-right: 8px;">';
 }
 
 </script>
