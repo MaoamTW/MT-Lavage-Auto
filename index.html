@@ -210,6 +210,13 @@ body{margin:0;font-family:'Segoe UI',sans-serif;background:#f5f7fa}
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
+.before-after,
+.before-after img,
+.slider-btn {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 /* MODAL */
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center}
 .modal-content{background:white;padding:25px;border-radius:15px;width:300px;text-align:center}
@@ -334,19 +341,20 @@ function move(x){
   line.style.left = pos + 'px';
 }
 
-btn.addEventListener('mousedown', () => isDown = true);
+// 👉 IMPORTANT : on capte sur TOUT le container
+container.addEventListener('mousedown', () => isDown = true);
 window.addEventListener('mouseup', () => isDown = false);
 
-window.addEventListener('mousemove', (e)=>{
+container.addEventListener('mousemove', (e)=>{
   if(!isDown) return;
   move(e.clientX);
 });
 
-// mobile
-btn.addEventListener('touchstart', () => isDown = true);
+// MOBILE FIX 🔥
+container.addEventListener('touchstart', () => isDown = true);
 window.addEventListener('touchend', () => isDown = false);
 
-window.addEventListener('touchmove', (e)=>{
+container.addEventListener('touchmove', (e)=>{
   if(!isDown) return;
   move(e.touches[0].clientX);
 });
