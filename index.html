@@ -162,15 +162,52 @@ body{margin:0;font-family:'Segoe UI',sans-serif;background:#f5f7fa}
   font-size:14px;
 }
 
-.reveal{
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
+.before-after{
+  position: relative;
+  width: 350px;
+  height: 250px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 15px;
 }
 
-.reveal.active{
-  opacity: 1;
-  transform: translateY(0);
+.before-after img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-left{
+  clip-path: inset(0 50% 0 0);
+}
+
+.img-right{
+  clip-path: inset(0 0 0 50%);
+}
+
+.slider-line{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: white;
+  z-index: 3;
+}
+
+.slider-btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25px;
+  height: 25px;
+  background: white;
+  border-radius: 50%;
+  z-index: 4;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 /* MODAL */
@@ -200,8 +237,18 @@ body{margin:0;font-family:'Segoe UI',sans-serif;background:#f5f7fa}
 
   <div class="buttons">
     <a href="tel:+330778043568" class="btn"><img src="https://i.imgur.com/Aooq57a.png" alt="Calendrier rouge" style="height: 30px; vertical-align: middle; margin-right: 8px;">Appeler</a>
-    <a href="mailto:votremail@gmail.com" class="btn"><img src="https://i.imgur.com/NihwN18.png" alt="Calendrier rouge" style="height: 30px; vertical-align: middle; margin-right: 8px;"> Email</a>
+    <a href="mailto:mt.lavage.auto.54@gmail.com" class="btn"><img src="https://i.imgur.com/NihwN18.png" alt="Calendrier rouge" style="height: 30px; vertical-align: middle; margin-right: 8px;"> Email</a>
   </div>
+</div>
+
+<div class="section">
+<h2>Avant / Après</h2>
+</div>
+<div class="before-after">
+  <img src="https://i.imgur.com/EuBvH0I.jpeg" class="img-right">
+  <img src="https://i.imgur.com/hLbYcye.jpeg" class="img-left">
+  <div class="slider-line"></div>
+  <div class="slider-btn"></div>
 </div>
 
 <div class="section">
@@ -261,6 +308,49 @@ body{margin:0;font-family:'Segoe UI',sans-serif;background:#f5f7fa}
     <button onclick="closeModal()">Fermer</button>
   </div>
 </div>
+
+<script>
+const container = document.querySelector('.before-after');
+const btn = document.querySelector('.slider-btn');
+const line = document.querySelector('.slider-line');
+const leftImg = document.querySelector('.img-left');
+const rightImg = document.querySelector('.img-right');
+
+let isDown = false;
+
+function move(x){
+  const rect = container.getBoundingClientRect();
+  let pos = x - rect.left;
+
+  if(pos < 0) pos = 0;
+  if(pos > rect.width) pos = rect.width;
+
+  const percent = (pos / rect.width) * 100;
+
+  leftImg.style.clipPath = `inset(0 ${100-percent}% 0 0)`;
+  rightImg.style.clipPath = `inset(0 0 0 ${percent}%)`;
+
+  btn.style.left = pos + 'px';
+  line.style.left = pos + 'px';
+}
+
+btn.addEventListener('mousedown', () => isDown = true);
+window.addEventListener('mouseup', () => isDown = false);
+
+window.addEventListener('mousemove', (e)=>{
+  if(!isDown) return;
+  move(e.clientX);
+});
+
+// mobile
+btn.addEventListener('touchstart', () => isDown = true);
+window.addEventListener('touchend', () => isDown = false);
+
+window.addEventListener('touchmove', (e)=>{
+  if(!isDown) return;
+  move(e.touches[0].clientX);
+});
+</script>
 
 <script>
 let currentService = '';
