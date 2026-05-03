@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>MT Lavage Auto — Lavage à domicile · Lunéville</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -361,6 +361,39 @@ footer strong{color:rgba(255,255,255,.8)}
 .pqb-icon-few{background:rgba(249,115,22,.1);color:var(--orange);font-size:14px}
 .pqb-icon-many{background:rgba(249,115,22,.2);color:var(--orange);font-size:8px;letter-spacing:1px}
 
+
+/* ── Nav formules button ── */
+.nav-formules{
+  display:inline-flex;align-items:center;
+  color:var(--ink);font-size:14px;font-weight:600;
+  text-decoration:none;padding:10px 18px;border-radius:40px;
+  border:1.5px solid var(--line);background:white;
+  transition:.2s;white-space:nowrap;
+}
+.nav-formules:hover{border-color:var(--blue2);color:var(--blue2)}
+@media(max-width:500px){
+  .nav-formules{display:none}
+}
+
+/* ── Mobile : cards formules moins grosses ── */
+@media(max-width:860px){
+  .fc-cards-row{gap:14px}
+  .fc-card{padding:18px 16px}
+  .fc-card-icon{width:52px!important;height:52px!important;border-radius:14px!important;margin-bottom:12px!important}
+  .fc-card-icon img{height:28px!important}
+  .fc-card-name{font-size:17px}
+  .fc-card-sub{font-size:12px;margin-bottom:12px}
+  .fc-card-list li{font-size:12px;gap:7px}
+  .fcc-chk{width:17px;height:17px;min-width:17px;font-size:9px}
+  .fc-card-dur{font-size:11px;margin-bottom:12px}
+  .fc-card-btn{padding:11px;font-size:13px}
+  .fc-card-btn img{height:15px}
+  .fc-card-price-note{font-size:10px}
+  .fc-card-sep{margin:2px 0 10px}
+  .pricing-section{padding:60px 16px}
+  .sec-hd{margin-bottom:32px}
+}
+
 </style>
 </head>
 <body>
@@ -368,7 +401,10 @@ footer strong{color:rgba(255,255,255,.8)}
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-logo"><img src="https://i.imgur.com/oPar5g4.png" alt="MT Lavage Auto"></div>
-  <button class="nav-rdv" onclick="openBooking(null)">Prendre RDV</button>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a href="#formules" class="nav-formules">Voir les formules</a>
+    <button class="nav-rdv" onclick="openBooking(null)">Prendre RDV</button>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -403,11 +439,6 @@ footer strong{color:rgba(255,255,255,.8)}
   </div>
 </div>
 
-<!-- COMMENT ÇA MARCHE -->
-<div class="steps-outer">
-  <div class="steps-inner">
-    <div class="sec-hd">
-      <div class="label-tag"><span class="label-dot"></span>Simple &amp; rapide</div>
       <h2 class="sh">Comment ça <span>marche ?</span></h2>
       <p class="sh-sub">Réservez en 30 secondes, on s'occupe du reste</p>
     </div>
@@ -437,7 +468,7 @@ footer strong{color:rgba(255,255,255,.8)}
 </div>
 
 <!-- PRESTATIONS + TARIFS -->
-<div class="pricing-section">
+<div class="pricing-section" id="formules">
   <div class="sec-c">
     <div class="sec-hd">
       <div class="label-tag" style="background:rgba(37,99,235,.14);border-color:rgba(37,99,235,.28)"><span class="label-dot"></span>📋 Réservez votre prestation</div>
