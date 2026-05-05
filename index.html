@@ -138,7 +138,7 @@ h2.sh span{color:var(--blue2)}
   background:var(--white);border-radius:var(--r2);padding:32px 26px;
   box-shadow:var(--sh);display:flex;flex-direction:column;align-items:center;text-align:center;
   position:relative;transition:.28s cubic-bezier(.22,.68,0,1.3);
-  border:2px solid transparent;overflow:hidden;
+  cursor:pointer;border:2px solid transparent;overflow:hidden;
 }
 .card:hover{transform:translateY(-8px);box-shadow:var(--sh2);border-color:rgba(37,99,235,.1)}
 
@@ -199,7 +199,12 @@ h2.sh span{color:var(--blue2)}
 .rdv-b{background:var(--blue2);color:white}
 .rdv-w{background:white;color:#b83a0a;font-weight:800}
 
-
+.btn-det{
+  background:none;border:none;cursor:pointer;
+  font-family:'Sora',sans-serif;font-size:12px;font-weight:600;
+  color:var(--blue2);margin-top:10px;padding:0;width:100%;text-align:center;
+}
+.card-orange .btn-det{color:rgba(255,255,255,.6)}
 
 .details-box{max-height:0;overflow:hidden;opacity:0;transition:.4s ease;font-size:12px;text-align:left;width:100%}
 .card.open .details-box{max-height:280px;opacity:1;margin-top:12px}
@@ -384,6 +389,21 @@ footer strong{color:rgba(255,255,255,.8)}
   .trust-block{flex:none;width:50%;border-right:none;border-bottom:1px solid rgba(255,255,255,.07)}
   .trust-block:nth-child(even){border-right:none}
 }
+
+/* ── STEPS ── */
+.steps-outer{background:var(--white);padding:90px 24px}
+.steps-inner{max-width:1060px;margin:0 auto}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:52px}
+@media(max-width:860px){.steps-grid{grid-template-columns:repeat(2,1fr)}}
+.step-card{background:var(--bg);border-radius:var(--r2);padding:30px 24px;text-align:center;position:relative;transition:.25s}
+.step-card:hover{transform:translateY(-5px);box-shadow:var(--sh2)}
+.step-num{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--blue2),var(--sky));color:white;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;box-shadow:0 4px 14px rgba(37,99,235,.3)}
+.step-icon{font-size:28px;margin-bottom:12px}
+.step-card h4{font-size:15px;font-weight:700;margin-bottom:6px}
+.step-card p{font-size:13px;color:var(--muted);line-height:1.6}
+.step-arrow{position:absolute;top:40px;right:-18px;font-size:22px;color:var(--line);z-index:2}
+@media(max-width:860px){.step-arrow{display:none}}
+
 </style>
 </head>
 <body>
@@ -403,7 +423,7 @@ footer strong{color:rgba(255,255,255,.8)}
   <div class="hero-logo-wrap fu">
     <div class="hero-logo-bg"><img src="https://i.imgur.com/oPar5g4.png" alt="MT Lavage Auto"></div>
   </div>
-  <div class="hero-badge fu d1"><span class="badge-dot"></span>Disponible · Lunéville &amp; alentours</div>
+  <div class="hero-badge fu d1"><span class="badge-dot"></span>Disponible · 25 km autour de Lunéville</div>
   <h1 class="fu d2">Votre voiture<br><em>comme neuve</em><br>sans bouger de chez vous</h1>
   <p class="hero-sub fu d3">Service de lavage automobile professionnel à domicile. Matériel pro, résultat garanti, paiement sur place.</p>
   <div class="hero-actions fu d4">
@@ -413,7 +433,7 @@ footer strong{color:rgba(255,255,255,.8)}
   <div class="hero-pills fu d5">
     <div class="h-pill"><img src="https://i.imgur.com/nquPnCg.png" alt="">Espèces</div>
     <div class="h-pill"><img src="https://i.imgur.com/IJMvks4.png" alt="">Carte bancaire</div>
-    <div class="h-pill">📍 Lunéville &amp; alentours</div>
+    <div class="h-pill">📍 Déplacement gratuit</div>
     <div class="h-pill">✅ Résultat garanti</div>
   </div>
 </section>
@@ -422,10 +442,47 @@ footer strong{color:rgba(255,255,255,.8)}
 <div class="trust-band">
   <div class="trust-inner">
     <div class="trust-block"><div class="t-num">100<em>%</em></div><div class="t-desc">Satisfaction garantie</div></div>
-    <div class="trust-block"><div class="t-num">📍</div><div class="t-desc">Lunéville &amp; alentours</div></div>
+    <div class="trust-block"><div class="t-num">0<em>€</em></div><div class="t-desc">Déplacement gratuit</div></div>
     <div class="trust-block"><div class="t-num"><em>&lt;</em>2h</div><div class="t-desc">Délai de réponse</div></div>
     <div class="trust-block"><div class="t-num">Pro<em>.</em></div><div class="t-desc">Matériel professionnel</div></div>
     <div class="trust-block"><div class="t-num">7<em>/7</em></div><div class="t-desc">Disponible sur RDV</div></div>
+  </div>
+</div>
+
+<!-- COMMENT ÇA MARCHE -->
+<div class="steps-outer">
+  <div class="steps-inner">
+    <div class="sec-hd">
+      <div class="label-tag"><span class="label-dot"></span>Simple &amp; rapide</div>
+      <h2 class="sh">Comment ça <span>marche ?</span></h2>
+      <p class="sh-sub">Réservez en 30 secondes, on s'occupe du reste</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card"><div class="step-num">1</div><div class="step-icon">📋</div><h4>Choisissez votre formule</h4><p>Intérieur, extérieur ou formule complète</p><div class="step-arrow">→</div></div>
+      <div class="step-card"><div class="step-num">2</div><div class="step-icon">📅</div><h4>Choisissez date &amp; heure</h4><p>Sélectionnez le créneau qui vous convient</p><div class="step-arrow">→</div></div>
+      <div class="step-card"><div class="step-num">3</div><div class="step-icon">📍</div><h4>On vient chez vous</h4><p>À domicile, au travail — où vous voulez</p><div class="step-arrow">→</div></div>
+      <div class="step-card"><div class="step-num">4</div><div class="step-icon">✨</div><h4>Voiture comme neuve</h4><p>Résultat professionnel, paiement sur place</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- QUI SUIS-JE -->
+<div class="sec" style="background:var(--bg)">
+  <div class="sec-c" style="max-width:760px">
+    <div class="sec-hd">
+      <div class="label-tag"><span class="label-dot"></span>À propos</div>
+      <h2 class="sh">Qui <span>suis-je ?</span></h2>
+    </div>
+    <div style="background:var(--white);border-radius:var(--r2);padding:36px 32px;display:flex;gap:28px;align-items:center;flex-wrap:wrap;justify-content:center;box-shadow:var(--sh)">
+      <div style="width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,#e8f0fe,#dbeafe);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:3px solid white;box-shadow:var(--sh2)">
+        <span style="font-size:64px">👋</span>
+      </div>
+      <div style="flex:1;min-width:260px">
+        <h3 style="font-family:'DM Serif Display',serif;font-size:24px;color:var(--ink);margin-bottom:12px">Bonjour, moi c'est <span style="color:var(--blue2)">Mao</span> !</h3>
+        <p style="color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:10px">Passionné de voitures, j'ai créé <strong style="color:var(--ink)">MT Lavage Auto</strong> pour offrir un service de lavage à domicile vraiment professionnel autour de Lunéville.</p>
+        <p style="color:var(--muted);font-size:14px;line-height:1.7">Mon objectif : que vous retrouviez votre voiture <strong style="color:var(--ink)">comme neuve</strong> sans avoir à bouger de chez vous, avec du matériel pro et un soin minutieux du détail.</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -457,7 +514,7 @@ footer strong{color:rgba(255,255,255,.8)}
     <div class="cards-grid">
 
       <!-- Intérieur -->
-      <div class="card">
+      <div class="card" onclick="toggleDetails(this,'interieur')">
         <div class="card-ico ico-r"><img src="https://i.imgur.com/vLcJWDh.png" alt=""></div>
         <h3>Intérieur</h3>
         <p class="card-sub">Lavage intérieur complet</p>
@@ -469,30 +526,30 @@ footer strong{color:rgba(255,255,255,.8)}
           <li><span class="chk chk-r">✓</span>Finition soignée</li>
         </ul>
         <div class="card-sep"></div>
-        <div class="card-dur">⏱ 1h à 2h selon l'état du véhicule · 🚗 À domicile</div>
+        <div class="card-dur">🚗 À domicile</div>
         <button class="btn-rdv rdv-r" onclick="event.stopPropagation();openBooking('Intérieur')"><img src="https://i.imgur.com/CaOo0Al.png" alt="">Prendre RDV</button>
       </div>
 
       <!-- Complet ORANGE -->
-      <div class="card card-orange">
+      <div class="card card-orange" onclick="toggleDetails(this,'complet')">
         <div class="card-ribbon">🔥 Populaire</div>
         <div class="card-ico ico-w"><img src="https://i.imgur.com/0yZv1u9.png" alt=""></div>
         <h3>Complet</h3>
         <p class="card-sub">Intérieur + extérieur</p>
         <ul class="feat-list">
-          <li><span class="chk chk-w">✓</span>Tout l'intérieur complet</li>
+          <li><span class="chk chk-w">✓</span>Tout l'intérieur et l'extérieur complet</li>
           <li><span class="chk chk-w">✓</span>Carrosserie + jantes</li>
           <li><span class="chk chk-w">✓</span>Séchage microfibre</li>
           <li><span class="chk chk-w">✓</span>Brillance carrosserie</li>
           <li><span class="chk chk-w">✓</span>Économisez jusqu'à 10€</li>
         </ul>
         <div class="card-sep"></div>
-        <div class="card-dur">⏱ 2h à 3h selon l'état du véhicule · 🚗 À domicile</div>
-        <button class="btn-rdv rdv-w" onclick="event.stopPropagation();openBooking('Complet')"><img src="https://i.imgur.com/bDjmXji.png" alt="">Prendre RDV</button>
+        <div class="card-dur">🚗 À domicile</div>
+        <button class="btn-rdv rdv-w" onclick="event.stopPropagation();openBooking('Complet')"><img src="https://i.imgur.com/bDjmXji.png" alt="">Prendre RDV</button>     
       </div>
 
       <!-- Extérieur -->
-      <div class="card">
+      <div class="card" onclick="toggleDetails(this,'exterieur')">
         <div class="card-ico ico-b"><img src="https://i.imgur.com/jEgsTM9.png" alt=""></div>
         <h3>Extérieur</h3>
         <p class="card-sub">Lavage extérieur complet</p>
@@ -504,7 +561,7 @@ footer strong{color:rgba(255,255,255,.8)}
           <li><span class="chk chk-b">✓</span>Vitres extérieures</li>
         </ul>
         <div class="card-sep"></div>
-        <div class="card-dur">⏱ 1h à 2h selon l'état du véhicule · 🚗 À domicile</div>
+        <div class="card-dur">🚗 À domicile</div>
         <button class="btn-rdv rdv-b" onclick="event.stopPropagation();openBooking('Extérieur')"><img src="https://i.imgur.com/RtQLKyp.png" alt="">Prendre RDV</button>
       </div>
 
@@ -537,9 +594,28 @@ footer strong{color:rgba(255,255,255,.8)}
         <div class="pt-col"><span class="pt-price blue-p">50€</span></div>
         <div class="pt-col"><span class="pt-price dark-p">85€</span><span class="pt-eco">−10€</span></div>
       </div>
-      <div class="pt-note">💳 Paiement sur place · Espèces ou carte bancaire · 📍 Déplacement gratuit dans les alentours de Lunéville — <a href="mailto:mt.lavage.auto.54@gmail.com" style="color:var(--blue2);font-weight:600">Vérifier ma zone</a></div>
+      <div class="pt-note">💳 Paiement sur place · Espèces ou carte bancaire · Déplacement gratuit</div>
     </div>
 
+  </div>
+</div>
+
+<!-- AVIS CLIENTS -->
+<div class="sec" style="background:var(--white)">
+  <div class="sec-c">
+    <div class="sec-hd">
+      <div class="label-tag"><span class="label-dot"></span>Avis clients</div>
+      <h2 class="sh">Ils me font <span>confiance</span></h2>
+      <p class="sh-sub">Retrouvez tous les avis sur ma fiche Google Business</p>
+    </div>
+    <div style="text-align:center;padding:48px 24px;background:var(--bg);border-radius:var(--r2);box-shadow:var(--sh);max-width:600px;margin:0 auto">
+      <div style="font-size:52px;margin-bottom:12px">⭐</div>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);margin-bottom:10px">Bientôt disponibles</h3>
+      <p style="color:var(--muted);font-size:14px;margin-bottom:24px;max-width:400px;margin-left:auto;margin-right:auto">Les avis Google de mes clients seront affichés ici très prochainement.</p>
+      <a href="#" id="google-business-link" style="display:inline-flex;align-items:center;gap:8px;background:var(--blue2);color:white;padding:12px 24px;border-radius:50px;font-size:14px;font-weight:700;text-decoration:none">
+        🔗 Voir mes avis Google
+      </a>
+    </div>
   </div>
 </div>
 
@@ -551,12 +627,15 @@ footer strong{color:rgba(255,255,255,.8)}
       <h2 class="sh">Pourquoi choisir <span>MT Lavage Auto ?</span></h2>
     </div>
     <div class="bens-grid">
-      <div class="ben-card"><div class="ben-ico"><img src="https://i.imgur.com/HHvo2oY.png" alt=""></div><div class="ben-body"><h4>Déplacement gratuit*</h4><p>Je viens chez vous dans les alentours de Lunéville. Pas sûr d'être dans la zone ? <a href="mailto:mt.lavage.auto.54@gmail.com" style="color:var(--blue2);font-weight:600">Envoyez-moi un message</a>.</p></div></div>
-      <div class="ben-card"><div class="ben-ico"><img src="https://i.imgur.com/8iXcYIe.png" alt=""></div><div class="ben-body"><h4>Matériel professionnel</h4><p>Produits et équipements de qualité pro. Vous n'avez rien à prévoir.</p></div></div>
-      <div class="ben-card"><div class="ben-ico"><img src="https://i.imgur.com/D8XBC47.png" alt=""></div><div class="ben-body"><h4>Résultat garanti</h4><p>Pas satisfait ? Je corrige sur place immédiatement.</p></div></div>
-      <div class="ben-card"><div class="ben-ico"><img src="https://i.imgur.com/K3HUKeC.png" alt=""></div><div class="ben-body"><h4>Réponse en &lt; 2h</h4><p>Je confirme votre RDV rapidement et m'adapte à vos disponibilités.</p></div></div>
-      <div class="ben-card"><div class="ben-ico"><img src="https://i.imgur.com/nquPnCg.png" alt=""></div><div class="ben-body"><h4>Paiement sur place</h4><p>Espèces ou carte bancaire après la prestation. Aucun acompte.</p></div></div>
-      <div class="ben-card"><div class="ben-ico"><img src="https://i.imgur.com/X8UWBIr.png" alt=""></div><div class="ben-body"><h4>Disponible 7j/7</h4><p>Je m'adapte à vos disponibilités, week-end compris, sur RDV.</p></div></div>
+      <div class="ben-card"><div class="ben-ico"><img src="https://i.imgur.com/HHvo2oY.png" alt=""></div><div class="ben-body"><h4>Déplacement gratuit</h4><p>Je viens directement chez vous ou sur votre lieu de travail.<br>Offert jusqu’à 25 km autour de Lunéville.
+	  <br><strong>Au-delà :</strong> supplément de 0,50€ / km.</p></div></div>
+      <div class="ben-card"><div class="ben-ico"><img src="https://i.imgur.com/8iXcYIe.png" alt=""></div><div class="ben-body"><h4>Matériel professionnel</h4><p>Produits et équipements professionnels pour un résultat optimal.
+<br>Vous n’avez rien à prévoir, je m’occupe de tout.</p></div></div>
+      <div class="ben-card"><div class="ben-ico"><img src="https://i.imgur.com/D8XBC47.png" alt=""></div><div class="ben-body"><h4>Résultat garanti</h4><p>Résultat professionnel garanti.
+Chaque prestation est réalisée avec exigence pour un rendu impeccable.</p></div></div>
+      <div class="ben-card"><div class="ben-ico"><img src="https://i.imgur.com/K3HUKeC.png" alt=""></div><div class="ben-body"><h4>Réponse rapide</h4><p>Je confirme votre RDV rapidement et m'adapte à vos disponibilités dans les plus brefs délais.</p></div></div>
+      <div class="ben-card"><div class="ben-ico"><img src="https://i.imgur.com/nquPnCg.png" alt=""></div><div class="ben-body"><h4>Paiement sur place</h4><p>Paiement après la prestation. <br>Espèces ou carte bancaire, sans acompte.</p></div></div>
+      <div class="ben-card"><div class="ben-ico"><img src="https://i.imgur.com/X8UWBIr.png" alt=""></div><div class="ben-body"><h4>Disponible 7j/7</h4><p>Disponible tous les jours, week-end compris. <br>Je m’adapte à vos disponibilités.</p></div></div>
     </div>
   </div>
 </div>
@@ -583,10 +662,15 @@ footer strong{color:rgba(255,255,255,.8)}
 <!-- CTA FINAL -->
 <div class="cta-band">
   <h2>Prêt pour une voiture<br>comme neuve ?</h2>
-  <p>Réservez votre créneau en 30 secondes. J'interviens dans les alentours de Lunéville — contactez-moi pour vérifier votre zone.</p>
+  <p>Réservez votre créneau en 30 secondes. Je viens chez vous, vous ne bougez pas.</p>
   <div class="cta-btns">
     <button class="cta-btn-main" onclick="openBooking(null)"><img src="https://i.imgur.com/CaOo0Al.png" alt="">Prendre rendez-vous</button>
     <a href="mailto:mt.lavage.auto.54@gmail.com" class="cta-btn-sec"><img src="https://i.imgur.com/NihwN18.png" alt="">Envoyer un email</a>
+  </div>
+  
+  <br>
+  <div class="cta-btns">
+	<a href="tel:+330778043568" class="cta-btn-sec"><img src="https://i.imgur.com/20OkNWC.png" alt="">Appeler</a>
   </div>
 </div>
 
@@ -644,6 +728,7 @@ footer strong{color:rgba(255,255,255,.8)}
         <button class="mb-veh-btn" onclick="pickVehicle('Citadine')"><span class="mv-emoji">🚗</span><span class="mv-name">Citadine</span><span class="mv-ex">Clio, Polo, 208…</span></button>
         <button class="mb-veh-btn" onclick="pickVehicle('Compacte & Berline')"><span class="mv-emoji">🚙</span><span class="mv-name">Compacte &amp; Berline</span><span class="mv-ex">Golf, 308, Classe A…</span></button>
         <button class="mb-veh-btn" onclick="pickVehicle('SUV & Monospace')"><span class="mv-emoji">🚐</span><span class="mv-name">SUV &amp; Monospace</span><span class="mv-ex">Kadjar, 3008, Q3…</span></button>
+        <button class="mb-veh-btn" onclick="pickVehicle('Utilitaire & Van')"><span class="mv-emoji">🚚</span><span class="mv-name">Utilitaire &amp; Van</span><span class="mv-ex">Devis par email</span></button>
       </div>
     </div>
 
@@ -732,16 +817,20 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
 });
 
 /* Cards détails */
-function toggleDetails(card,type){}
+function toggleDetails(card,type){
+  const isOpen=card.classList.contains('open');
+  document.querySelectorAll('.card').forEach(c=>{c.classList.remove('open');c.querySelector('.btn-det').style.display='block';});
+  if(!isOpen){card.classList.add('open');card.querySelector('.btn-det').style.display='none';}
+}
 
 /* ══ SMART BOOKING ══ */
 const TARIFS={
-  'Intérieur':{'Citadine':35,'Compacte & Berline':40,'SUV & Monospace':45},
-  'Extérieur':{'Citadine':40,'Compacte & Berline':45,'SUV & Monospace':50},
-  'Complet':  {'Citadine':65,'Compacte & Berline':75,'SUV & Monospace':85},
+  'Intérieur':{'Citadine':35,'Compacte & Berline':40,'SUV & Monospace':45,'Utilitaire & Van':null},
+  'Extérieur':{'Citadine':40,'Compacte & Berline':45,'SUV & Monospace':50,'Utilitaire & Van':null},
+  'Complet':  {'Citadine':65,'Compacte & Berline':75,'SUV & Monospace':85,'Utilitaire & Van':null},
 };
 const SLOTS={'Complet':['09:00 - 12:00','13:00 - 16:00'],default:['09:00 - 11:00','13:00 - 15:00','17:00 - 19:00']};
-const VEH_EMOJI={'Citadine':'🚗','Compacte & Berline':'🚙','SUV & Monospace':'🚐'};
+const VEH_EMOJI={'Citadine':'🚗','Compacte & Berline':'🚙','SUV & Monospace':'🚐','Utilitaire & Van':'🚚'};
 const STEPS=[1,2,25,3,4];
 const STEP_ORDER={1:1,2:2,25:3,3:4,4:5};
 let bk={formule:'',vehicule:'',poilsOption:null,date:'',time:'',address:'',notes:''};
@@ -749,7 +838,7 @@ let calYear,calMonth,calSelected=null;
 
 function hasInterior(f){return f==='Intérieur'||f==='Complet';}
 function getTotal(){const b=TARIFS[bk.formule]?.[bk.vehicule]??null;return b===null?null:b+(bk.poilsOption?bk.poilsOption.extra:0);}
-function getTotalTxt(){const t=getTotal();return t!==null?t+'€':'';}
+function getTotalTxt(){const t=getTotal();return t!==null?t+'€':'Sur devis';}
 
 function openBooking(preset){
   bk={formule:'',vehicule:'',poilsOption:null,date:'',time:'',address:'',notes:''};
@@ -771,6 +860,7 @@ function goStep(n){
 function pickFormule(f){bk.formule=f;goStep(2);}
 function pickVehicle(v){
   bk.vehicule=v;
+  if(v==='Utilitaire & Van'){const msg=`Bonjour,\n\nJe souhaite un devis pour la formule ${bk.formule} pour un ${v}.\n\nMerci.\n\nCordialement`;window.location.href=`mailto:mt.lavage.auto.54@gmail.com?subject=Devis Lavage - ${v}&body=${encodeURIComponent(msg)}`;closeModal();return;}
   if(hasInterior(bk.formule))goStep(25);else{bk.poilsOption=null;goStep(3);}
 }
 function pickPoils(w){if(!w){bk.poilsOption=null;goStep(3);}else showPoilsLevel();}
