@@ -196,6 +196,18 @@ h2.sh span{color:var(--blue2)}
 .pt-eco{font-size:10px;color:var(--green);font-weight:600;background:rgba(34,197,94,.1);padding:1px 6px;border-radius:20px;display:block;text-align:center;margin-top:3px}
 .pt-note{padding:12px 20px;font-size:12px;color:var(--muted);background:#f8faff;border-top:1px solid var(--line);text-align:center}
 @media(max-width:640px){.pt-head,.pt-row{grid-template-columns:1fr 66px 66px 76px;padding:10px 12px}.pt-price{font-size:12px}.pt-veh-icon{font-size:18px}}
+@media(max-width:480px){
+  .pt-head,.pt-row{grid-template-columns:1fr 52px 52px 60px;padding:8px 10px}
+  .pt-price{font-size:13px;font-weight:800}
+  .pt-veh-icon{font-size:15px}
+  .pt-veh-name{font-size:11px}
+  .pt-veh-ex{font-size:9px}
+  .pt-col{font-size:9px;letter-spacing:0}
+  .pt-eco{font-size:9px;padding:1px 4px}
+  .pt-note{font-size:10px;padding:10px 10px}
+  .pt-title{font-size:12px;padding:12px 12px}
+  .pt-prices-mobile{display:none}
+}
 
 /* ── HORAIRES BAND ── */
 .horaires-band{background:var(--ink2);padding:44px 24px}
@@ -363,15 +375,69 @@ footer strong{color:rgba(255,255,255,.8)}
 .photo-thumb-del{position:absolute;top:4px;right:4px;background:rgba(0,0,0,.55);color:white;border:none;border-radius:50%;width:22px;height:22px;cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center;line-height:1}
 .photo-note-box{background:rgba(249,115,22,.06);border:1px solid rgba(249,115,22,.25);border-radius:var(--r);padding:12px 14px;font-size:12px;color:var(--ink);line-height:1.6;margin-bottom:14px}
 .photo-note-box strong{color:var(--orange)}
-.photo-skip{width:100%;background:none;border:none;font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;padding:6px;text-align:center;margin-top:4px}
-.photo-skip:hover{color:var(--blue2)}
+.photo-skip{width:100%;background:var(--ink2);border:none;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;color:white;cursor:pointer;padding:15px;text-align:center;margin-top:12px;border-radius:50px;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.photo-skip:hover{background:var(--ink);transform:translateY(-1px)}
 
 @media(max-width:600px){
   nav{padding:12px 18px}
-  .hero{padding:110px 20px 80px}
-  .hero-logo-bg img{height:56px}
+  .hero{padding:100px 16px 60px}
+  .hero-logo-bg{padding:12px 20px}
+  .hero-logo-bg img{height:48px}
+  .hero-badge{font-size:11px;padding:6px 14px}
+  .hero h1{font-size:clamp(28px,8vw,42px);margin-bottom:14px}
+  .hero-sub{font-size:13px;margin-bottom:24px}
+  .btn-hero-main,.btn-hero-sec{padding:11px 18px;font-size:13px}
+  .hero-actions{gap:10px;margin-bottom:28px}
   .trust-block{flex:none;width:50%;border-right:none;border-bottom:1px solid rgba(255,255,255,.07)}
   .trust-block:nth-child(even){border-right:none}
+  .t-num{font-size:30px}
+  .sec{padding:52px 16px}
+  .steps-outer{padding:52px 16px}
+  h2.sh{font-size:clamp(20px,6vw,28px)}
+  .sh-sub{font-size:13px}
+  .horaires-band{padding:32px 16px}
+  .horaires-title{font-size:17px;margin-bottom:20px}
+  .h-slot{padding:10px 16px;gap:10px}
+  .h-slot-time{font-size:14px}
+  .bens-grid{grid-template-columns:1fr}
+  .ben-card{padding:18px 16px;gap:12px}
+  .ben-ico{width:38px;height:38px;min-width:38px;border-radius:10px}
+  .ben-body h4{font-size:13px}
+  .ben-body p{font-size:12px}
+  .pricing-section{padding:52px 16px}
+  .cards-grid{max-width:100%}
+  .card{padding:22px 18px}
+  .card h3{font-size:17px}
+  .feat-list li{font-size:12px}
+  .pt-head,.pt-row{grid-template-columns:1fr 58px 58px 68px;padding:10px 10px}
+  .pt-price{font-size:11px}
+  .pt-veh-name{font-size:12px}
+  .pt-veh-ex{font-size:10px}
+  .pt-veh-icon{font-size:16px}
+  .pt-note{font-size:11px;padding:10px 12px}
+  .faq-q{font-size:13px;padding:14px 16px}
+  .faq-a{font-size:13px}
+  .cta-band{padding:52px 16px}
+  .cta-band p{font-size:14px}
+  footer{padding:36px 16px;font-size:12px}
+  .prise-band-note{font-size:11px;padding:8px 14px}
+  .modal-box{padding:20px 16px 18px;border-radius:20px}
+  .mb-step-label{font-size:8px}
+  .mb-step-num{width:26px;height:26px;font-size:11px}
+  .mb-line{margin:0 3px;margin-bottom:12px}
+  .mb-title{font-size:17px}
+  .mb-formula-grid{gap:8px}
+  .mb-formula-btn{padding:14px 8px 12px}
+  .mf-name{font-size:12px}
+  .mf-price{font-size:10px}
+  .mf-ico-wrap{width:38px;height:38px}
+  .mb-veh-grid{gap:8px}
+  .mb-veh-btn{padding:14px 10px}
+  .mv-emoji{font-size:26px}
+  .mv-name{font-size:12px}
+  .mv-ex{font-size:10px}
+  .cal-day{font-size:12px}
+  .cal-weekdays span{font-size:9px}
 }
 
 .prise-band-note{display:inline-flex;align-items:center;gap:10px;background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.3);color:rgba(255,220,180,.9);font-size:13px;font-weight:600;padding:10px 20px;border-radius:50px;margin-top:4px}
@@ -389,6 +455,7 @@ footer strong{color:rgba(255,255,255,.8)}
 .step-card p{font-size:13px;color:var(--muted);line-height:1.6}
 .step-arrow{position:absolute;top:40px;right:-18px;font-size:22px;color:var(--line);z-index:2}
 @media(max-width:860px){.step-arrow{display:none}}
+@media(max-width:600px){.steps-grid{gap:8px}.step-card{padding:14px 10px;border-radius:14px}.step-num{width:30px;height:30px;font-size:13px;margin-bottom:8px}.step-icon{font-size:18px;margin-bottom:6px}.step-card h4{font-size:11px;margin-bottom:3px}.step-card p{font-size:10px;line-height:1.4}}
 
 /* ── VAN CONTACT SCREEN ── */
 .van-contact-box{text-align:center;padding:10px 0}
@@ -400,6 +467,23 @@ footer strong{color:rgba(255,255,255,.8)}
 .van-btn-sms:hover{filter:brightness(1.08);transform:scale(1.02)}
 .van-btn-mail{flex:1;padding:13px;background:var(--ink);color:white;border:none;border-radius:50px;cursor:pointer;font-family:'Sora',sans-serif;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px;transition:.2s}
 .van-btn-mail:hover{filter:brightness(1.15);transform:scale(1.02)}
+/* ── CRÉNEAUX HORAIRES BOUTONS ── */
+.slot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.slot-btn{display:flex;flex-direction:column;align-items:center;gap:5px;padding:16px 10px;border-radius:16px;border:2px solid var(--line);background:var(--bg);cursor:pointer;font-family:'Sora',sans-serif;transition:.22s;position:relative;overflow:hidden}
+.slot-btn:hover{border-color:var(--blue2);background:#eff6ff;transform:translateY(-3px);box-shadow:var(--sh2)}
+.slot-btn.selected{border-color:var(--blue2);background:linear-gradient(145deg,#eff6ff,#dbeafe);box-shadow:0 4px 16px rgba(37,99,235,.2)}
+.slot-btn.selected::after{content:'✓';position:absolute;top:6px;right:8px;font-size:11px;font-weight:800;color:var(--blue2)}
+.slot-icon{font-size:22px;line-height:1}
+.slot-time{font-size:17px;font-weight:800;color:var(--ink);letter-spacing:.01em}
+.slot-label{font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.slot-btn.selected .slot-time{color:var(--blue2)}
+.slot-btn.selected .slot-label{color:rgba(37,99,235,.7)}
+@media(max-width:600px){
+  .slot-btn{padding:14px 8px;border-radius:14px}
+  .slot-icon{font-size:18px}
+  .slot-time{font-size:15px}
+  .slot-label{font-size:9px}
+}
 </style>
 </head>
 <body>
@@ -701,11 +785,6 @@ footer strong{color:rgba(255,255,255,.8)}
 <!-- FOOTER -->
 <footer>
   <div class="foot-logo"><img src="https://i.imgur.com/oPar5g4.png" alt="MT Lavage Auto"></div>
-  <div class="foot-social">
-    <a href="#" title="Instagram" aria-label="Instagram"><img src="https://i.imgur.com/YVK3Trv.png" alt="Instagram" style="height: 20px; vertical-align: middle; margin-right: 8px;"></a>
-    <a href="#" title="Facebook" aria-label="Facebook"><img src="https://i.imgur.com/bDsNBGD.png" alt="FaceBook" style="height: 20px; vertical-align: middle; margin-right: 8px;"></a>
-    <a href="mailto:mt.lavage.auto.54@gmail.com" title="Email" aria-label="Email">✉️</a>
-  </div>
   <div class="foot-sep"></div>
   <p><strong>MT Lavage Auto</strong> — Lavage automobile à domicile</p>
   <p><strong>Gérant :</strong> Ton Prénom NOM &nbsp;·&nbsp; <strong>Statut :</strong> Auto-entrepreneur</p>
@@ -779,32 +858,42 @@ footer strong{color:rgba(255,255,255,.8)}
       </div>
     </div>
 
-    <!-- ÉTAPE 3 : Options poils -->
+    <!-- ÉTAPE 3 : Options -->
     <div id="screen-25" style="display:none">
       <button class="mb-back" onclick="goStep(2)">← Retour</button>
-      <div class="mb-title">Option poils d'animaux 🐾</div>
-      <p style="font-size:13px;color:var(--muted);margin-bottom:20px">Votre animal laisse des poils dans l'habitacle ?</p>
-      <button class="poil-choice poil-no" onclick="pickPoils(false)">
-        <div class="pc-left"><div class="pc-icon-wrap pc-icon-green">🚗</div><div><div class="pc-title">Sans option poils</div><div class="pc-sub">Lavage standard — déjà inclus</div></div></div>
-        <span class="pc-tag pc-tag-green">Inclus</span>
-      </button>
-      <div class="poils-or">— ou —</div>
-      <button class="poil-choice poil-yes" onclick="showPoilsLevel()">
-        <div class="pc-left"><div class="pc-icon-wrap pc-icon-orange">🐾</div><div><div class="pc-title">Avec option poils</div><div class="pc-sub">Traitement anti-poils en profondeur</div></div></div>
-        <span class="pc-tag pc-tag-orange">+20€ / +35€</span>
-      </button>
-      <div id="poils-level" style="display:none">
-        <div class="poils-qty-title">Quelle quantité de poils ?</div>
-        <div class="poils-qty-grid">
-          <button class="poils-qty-btn" onclick="pickPoilsLevel('Peu de poils',20)">
-            <div class="pqb-icon pqb-icon-few">◎</div>
-            <span class="pqb-name">Peu de poils</span><span class="pqb-price">+20€</span>
-          </button>
-          <button class="poils-qty-btn" onclick="pickPoilsLevel('Beaucoup de poils',35)">
-            <div class="pqb-icon pqb-icon-many">●●●</div>
-            <span class="pqb-name">Beaucoup de poils</span><span class="pqb-price">+35€</span>
-          </button>
+      <div class="mb-title">Options <span id="opt-title-badge"></span></div>
+
+      <!-- Poils (intérieur/complet uniquement) -->
+      <div id="poils-section">
+        <p style="font-size:13px;color:var(--muted);margin-bottom:20px">Votre animal laisse des poils dans l'habitacle ?</p>
+        <button class="poil-choice poil-no" onclick="pickPoils(false)">
+          <div class="pc-left"><div class="pc-icon-wrap pc-icon-green">🚗</div><div><div class="pc-title">Sans option poils</div><div class="pc-sub">Lavage standard — déjà inclus</div></div></div>
+          <span class="pc-tag pc-tag-green">Inclus</span>
+        </button>
+        <div class="poils-or">— ou —</div>
+        <button class="poil-choice poil-yes" onclick="showPoilsLevel()">
+          <div class="pc-left"><div class="pc-icon-wrap pc-icon-orange">🐾</div><div><div class="pc-title">Avec option poils</div><div class="pc-sub">Traitement anti-poils en profondeur</div></div></div>
+          <span class="pc-tag pc-tag-orange">+20€ / +35€</span>
+        </button>
+        <div id="poils-level" style="display:none">
+          <div class="poils-qty-title">Quelle quantité de poils ?</div>
+          <div class="poils-qty-grid">
+            <button class="poils-qty-btn" onclick="pickPoilsLevel('Peu de poils',20)">
+              <div class="pqb-icon pqb-icon-few">◎</div>
+              <span class="pqb-name">Peu de poils</span><span class="pqb-price">+20€</span>
+            </button>
+            <button class="poils-qty-btn" onclick="pickPoilsLevel('Beaucoup de poils',35)">
+              <div class="pqb-icon pqb-icon-many">●●●</div>
+              <span class="pqb-name">Beaucoup de poils</span><span class="pqb-price">+35€</span>
+            </button>
+          </div>
         </div>
+      </div>
+
+      <!-- Extérieur uniquement : pas d'option, juste continuer -->
+      <div id="ext-section" style="display:none">
+        <p style="font-size:13px;color:var(--muted);margin-bottom:20px">Aucune option supplémentaire pour le lavage extérieur.</p>
+        <button class="mb-next-btn" onclick="bk.poilsOption=null;goStep(35)">Continuer →</button>
       </div>
     </div>
 
@@ -822,13 +911,14 @@ footer strong{color:rgba(255,255,255,.8)}
         <input type="file" id="photo-input" accept="image/*" multiple onchange="handlePhotos(this.files)">
         <div class="puz-icon">📷</div>
         <div class="puz-title">Ajouter des photos</div>
-        <div class="puz-sub">Intérieur, extérieur, tapis… <br>Appuyez ici ou glissez vos photos (max 5)</div>
+        <div class="puz-sub">Intérieur, extérieur, tapis… <br>Appuyez ici ou glissez vos photos</div>
       </div>
 
       <div class="photo-preview-grid" id="photo-preview" style="display:none"></div>
 
-      <button class="mb-next-btn" onclick="goStep(3)" id="photo-next-btn" style="display:none">Suivant →</button>
-      <button class="photo-skip" onclick="goStep(3)">Passer cette étape →</button>
+      <button class="mb-next-btn" id="photo-next-btn" onclick="goStep(3)" disabled style="margin-top:4px;opacity:.35;cursor:not-allowed;filter:none;transform:none">📸 Continuer avec mes photos</button>
+      <div style="text-align:center;font-size:11px;color:var(--muted);font-weight:500;margin:10px 0 2px">— Je n'ai pas de photos à ajouter —</div>
+      <button class="photo-skip" onclick="goStep(3)">➡️ Passer cette étape</button>
     </div>
 
     <!-- ÉTAPE 5 : Créneau -->
@@ -848,7 +938,24 @@ footer strong{color:rgba(255,255,255,.8)}
         <div class="cal-selected-display" id="cal-selected-display">Aucune date sélectionnée</div>
       </div>
       <label class="mb-label">⏰ Créneau horaire</label>
-      <select id="mb-time" class="m-field"></select>
+      <div class="slot-grid" id="slot-grid">
+        <button class="slot-btn" onclick="pickSlot(this,'8h30')">
+          <span class="slot-icon">🌅</span>
+          <span class="slot-time">8h30</span>
+          <span class="slot-label">Matin</span>
+        </button>
+        <button class="slot-btn" onclick="pickSlot(this,'12h30')">
+          <span class="slot-icon">☀️</span>
+          <span class="slot-time">12h30</span>
+          <span class="slot-label">Après-midi</span>
+        </button>
+        <button class="slot-btn" onclick="pickSlot(this,'16h30')">
+          <span class="slot-icon">🌆</span>
+          <span class="slot-time">16h30</span>
+          <span class="slot-label">Fin de journée</span>
+        </button>
+      </div>
+      <input type="hidden" id="mb-time" value="">
       <!-- Rappel prise électrique -->
       <div style="display:flex;align-items:flex-start;gap:10px;background:rgba(249,115,22,.07);border:1px solid rgba(249,115,22,.25);border-radius:12px;padding:12px 14px;margin-bottom:14px;font-size:12px;color:var(--ink);line-height:1.6">
         <span style="font-size:18px;flex-shrink:0">⚡</span>
@@ -954,7 +1061,18 @@ function goStep(n){
     const el=document.getElementById(id);if(el)el.classList.toggle('done',cur>idx+2);
   });
 
-  if(n===25)document.getElementById('poils-level').style.display='none';
+  if(n===25){
+    document.getElementById('poils-level').style.display='none';
+    if(hasInterior(bk.formule)){
+      document.getElementById('poils-section').style.display='block';
+      document.getElementById('ext-section').style.display='none';
+      document.getElementById('opt-title-badge').textContent='🐾';
+    } else {
+      document.getElementById('poils-section').style.display='none';
+      document.getElementById('ext-section').style.display='block';
+      document.getElementById('opt-title-badge').textContent='';
+    }
+  }
   if(n===35)resetPhotoStep();
   if(n===3)buildStep3();
   if(n===4)buildStep4();
@@ -965,8 +1083,7 @@ function pickFormule(f){bk.formule=f;goStep(2);}
 function pickVehicle(v){
   bk.vehicule=v;
   if(v==='Utilitaire & Van'){goStep('van');return;}
-  if(hasInterior(bk.formule))goStep(25);
-  else{bk.poilsOption=null;goStep(35);}
+  goStep(25);
 }
 
 function contactVanSMS(){
@@ -984,14 +1101,15 @@ function pickPoils(w){
 }
 function showPoilsLevel(){document.getElementById('poils-level').style.display='block';}
 function pickPoilsLevel(label,extra){bk.poilsOption={label,extra};goStep(35);}
-function backFromPhotos(){if(hasInterior(bk.formule))goStep(25);else goStep(2);}
+function backFromPhotos(){goStep(25);}
 
 /* ══ PHOTOS ══ */
 function resetPhotoStep(){
   uploadedPhotos=[];
   document.getElementById('photo-preview').style.display='none';
   document.getElementById('photo-preview').innerHTML='';
-  document.getElementById('photo-next-btn').style.display='none';
+  const btn=document.getElementById('photo-next-btn');
+  btn.disabled=true;btn.style.opacity='.35';btn.style.cursor='not-allowed';
   document.getElementById('photo-input').value='';
 }
 
@@ -1020,21 +1138,36 @@ function renderPhotoPreview(){
     grid.appendChild(wrap);
   });
   grid.style.display=uploadedPhotos.length?'grid':'none';
-  document.getElementById('photo-next-btn').style.display=uploadedPhotos.length?'block':'none';
+  const btn=document.getElementById('photo-next-btn');
+  if(uploadedPhotos.length){
+    btn.disabled=false;btn.style.opacity='1';btn.style.cursor='pointer';btn.style.filter='';btn.style.transform='';
+  } else {
+    btn.disabled=true;btn.style.opacity='.35';btn.style.cursor='not-allowed';btn.style.filter='none';btn.style.transform='none';
+  }
+}
+
+function pickSlot(btn,val){
+  document.querySelectorAll('.slot-btn').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  document.getElementById('mb-time').value=val;
+  bk.time=val;
 }
 
 function buildStep3(){
   const poilsInfo=bk.poilsOption?` + 🐾 ${bk.poilsOption.label}`:'';
   document.getElementById('recap-price').innerHTML=`<span>${bk.formule}${poilsInfo} · ${VEH_EMOJI[bk.vehicule]||''} ${bk.vehicule}</span><span class="recap-price-tag">${getTotalTxt()}</span>`;
-  const sel=document.getElementById('mb-time');sel.innerHTML='';
-  SLOTS.forEach(s=>{const o=document.createElement('option');o.value=o.textContent=s;sel.appendChild(o);});
-  if(bk.time)sel.value=bk.time;
+  // Reset slot selection
+  document.querySelectorAll('.slot-btn').forEach(b=>b.classList.remove('selected'));
+  document.getElementById('mb-time').value='';
+  bk.time='';
   setTimeout(()=>initCal(),10);
 }
 
 function buildStep4(){
-  bk.date=calSelected||'';bk.time=document.getElementById('mb-time').value;
+  bk.date=calSelected||'';
+  bk.time=document.getElementById('mb-time').value;
   if(!bk.date){alert('Veuillez choisir une date.');goStep(3);return;}
+  if(!bk.time){alert('Veuillez choisir un créneau horaire.');goStep(3);return;}
   const poilsRow=bk.poilsOption?`<div class="recap-row">🐾 <strong>Option poils :</strong> ${bk.poilsOption.label} (+${bk.poilsOption.extra}€)</div>`:'';
   const photosRow=uploadedPhotos.length?`<div class="recap-row">📸 <strong>Photos :</strong> ${uploadedPhotos.length} photo(s) jointe(s)</div>`:'';
   document.getElementById('recap-full').innerHTML=
