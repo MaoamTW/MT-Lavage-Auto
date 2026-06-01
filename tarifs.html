@@ -270,7 +270,8 @@ footer strong{color:rgba(255,255,255,.8)}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.22,.68,0,1.2),transform .6s cubic-bezier(.22,.68,0,1.2)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 a,button{transition:all .22s cubic-bezier(.22,.68,0,1.2)!important}
-nav{transition:box-shadow .4s ease,background .4s ease!important}
+nav{transition:box-shadow .4s ease,background .4s ease, transform .35s cubic-bezier(.4,0,.2,1)!important}
+nav.nav-hidden{transform:translateY(-100%)}
 .modal-box{animation:modalIn .4s cubic-bezier(.22,.68,0,1.2) both!important}
 @keyframes modalIn{from{opacity:0;transform:translateY(32px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
 html{scroll-behavior:smooth}*{-webkit-tap-highlight-color:transparent}
@@ -472,6 +473,7 @@ img{transition:opacity .3s ease}
   .swipe-hint::after{content:'Glissez pour voir la suite ➞';display:block}
 }
 </style>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/IqrRxd8.png">
 </head>
 <body>
 <nav id="nav">
@@ -970,7 +972,14 @@ img{transition:opacity .3s ease}
 </div>
 
 <script>
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sc',scrollY>40));
+let _lastSY=0,_navEl=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  const sy=window.scrollY;
+  if(sy>_lastSY && sy>80){_navEl.classList.add('nav-hidden');}
+  else{_navEl.classList.remove('nav-hidden');}
+  _navEl.classList.toggle('sc',sy>40);
+  _lastSY=sy;
+},{ passive:true });
 function toggleMenu(){const b=document.getElementById('burger'),m=document.getElementById('nav-mobile'),o=document.getElementById('overlay');b.classList.toggle('open');m.classList.toggle('open');o.classList.toggle('open');}
 function switchTier(tier, btn) {
   document.querySelectorAll('.tier-btn').forEach(t=>t.classList.remove('active'));

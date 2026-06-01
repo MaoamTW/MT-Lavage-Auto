@@ -335,7 +335,8 @@ footer strong{color:rgba(255,255,255,.8)}
 a,button{transition:all .22s cubic-bezier(.22,.68,0,1.2)!important}
 
 /* Nav — apparition smooth */
-nav{transition:box-shadow .4s ease, background .4s ease!important}
+nav{transition:box-shadow .4s ease, background .4s ease, transform .35s cubic-bezier(.4,0,.2,1)!important}
+nav.nav-hidden{transform:translateY(-100%)}
 
 /* Cards — hover plus fluide */
 .card,.ben-card,.step-card,.ba-card,.faq-item,.option-card,.avis-card{
@@ -421,6 +422,7 @@ img{transition:opacity .3s ease}
 .mb-tier-sub{font-size:11px;color:var(--muted);text-align:center;line-height:1.4}.mb-tier-price{font-size:13px;font-weight:700}
 .mb-tier-basique .mb-tier-price{color:var(--blue2)}.mb-tier-premium .mb-tier-price{color:#b45309}
 </style>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/IqrRxd8.png">
 </head>
 <body>
 
@@ -697,7 +699,14 @@ img{transition:opacity .3s ease}
 </div>
 
 <script>
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sc',scrollY>40));
+let _lastSY=0,_navEl=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  const sy=window.scrollY;
+  if(sy>_lastSY && sy>80){_navEl.classList.add('nav-hidden');}
+  else{_navEl.classList.remove('nav-hidden');}
+  _navEl.classList.toggle('sc',sy>40);
+  _lastSY=sy;
+},{ passive:true });
 function toggleMenu(){const b=document.getElementById('burger'),m=document.getElementById('nav-mobile'),o=document.getElementById('overlay');b.classList.toggle('open');m.classList.toggle('open');o.classList.toggle('open');}
 const TARIFS_PREMIUM={'Intérieur':{'Citadine':60,'Berline & Compacte':70,'SUV & Monospace':80,'Utilitaire & Van':null},'Extérieur':{'Citadine':40,'Berline & Compacte':50,'SUV & Monospace':60,'Utilitaire & Van':null},'Complet':{'Citadine':90,'Berline & Compacte':105,'SUV & Monospace':120,'Utilitaire & Van':null}};
 const TARIFS_BASIQUE={'Intérieur':{'Citadine':45,'Berline & Compacte':55,'SUV & Monospace':65,'Utilitaire & Van':null},'Extérieur':{'Citadine':35,'Berline & Compacte':45,'SUV & Monospace':55,'Utilitaire & Van':null},'Complet':{'Citadine':70,'Berline & Compacte':85,'SUV & Monospace':100,'Utilitaire & Van':null}};

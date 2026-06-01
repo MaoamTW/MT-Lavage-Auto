@@ -504,7 +504,8 @@ footer strong{color:rgba(255,255,255,.8)}
 a,button{transition:all .22s cubic-bezier(.22,.68,0,1.2)!important}
 
 /* Nav — apparition smooth */
-nav{transition:box-shadow .4s ease, background .4s ease!important}
+nav{transition:box-shadow .4s ease, background .4s ease, transform .35s cubic-bezier(.4,0,.2,1)!important}
+nav.nav-hidden{transform:translateY(-100%)}
 
 /* Cards — hover plus fluide */
 .card,.ben-card,.step-card,.ba-card,.faq-item,.option-card,.avis-card{
@@ -597,6 +598,7 @@ img{transition:opacity .3s ease}
   .zone-map-col{order:-1}
 }
 </style>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/IqrRxd8.png">
 </head>
 <body>
 
@@ -949,7 +951,14 @@ img{transition:opacity .3s ease}
 
 <script>
 // NAV
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sc',scrollY>40));
+let _lastSY=0,_navEl=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  const sy=window.scrollY;
+  if(sy>_lastSY && sy>80){_navEl.classList.add('nav-hidden');}
+  else{_navEl.classList.remove('nav-hidden');}
+  _navEl.classList.toggle('sc',sy>40);
+  _lastSY=sy;
+},{ passive:true });
 function toggleMenu(){
   const b=document.getElementById('burger'),m=document.getElementById('nav-mobile'),o=document.getElementById('overlay');
   b.classList.toggle('open');m.classList.toggle('open');o.classList.toggle('open');
